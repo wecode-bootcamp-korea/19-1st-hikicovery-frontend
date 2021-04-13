@@ -1,0 +1,129 @@
+.main_wrapper {
+  position: relative;
+  height: 100vh;
+  .main_backImg_wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    li {
+      position: absolute;
+      display: inline;
+    }
+  }
+
+  .nav_wrapper {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 180px;
+    .under_bar {
+      border: 1px solid black;
+    }
+
+    .nav_img_box {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+      height: 34px;
+    }
+
+    .nav_search_box {
+      display: flex;
+      justify-content: center;
+      margin: 5px 10px;
+
+      .search_button {
+        width: 30px;
+        background-color: transparent;
+      }
+      .disabled_search_button {
+        display: none;
+      }
+
+      .search_input_box {
+        display: flex;
+
+        .search_input {
+          padding: 10px 10px;
+          height: 100%;
+          width: 150px;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .catagory_wrapper {
+      padding: 0 10px;
+
+      .catagory_list {
+        margin: 5px 0;
+        font-style: italic;
+      }
+      .catagory_list:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .sideBar_wrapper {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    .sideBar_menu {
+      margin-bottom: 5px;
+    }
+
+    .sideBar_button {
+      height: 35px;
+      width: 75px;
+      background-color: white;
+      cursor: pointer;
+
+      svg {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    .quick_menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+      font-size: 12px;
+      background-color: white;
+
+      a {
+        color: #666;
+      }
+
+      a:hover {
+        border-bottom: 1px solid black;
+        color: black;
+      }
+    }
+  }
+
+  .main_slide_controller {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    top: 50%;
+    .main_prev_button,
+    .main_next_button {
+      height: 40px;
+      width: 80px;
+      background-color: transparent;
+      cursor: pointer;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+      svg:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
