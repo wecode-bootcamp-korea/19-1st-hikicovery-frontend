@@ -5,7 +5,7 @@ class ColorList extends Component {
     return (
       <li className="payment_color_list">
         <a href="/">
-          <img src="{this.props.image}" alt="색상별 제품사진" />
+          <img src={this.props.images} alt="색상별 제품사진" />
         </a>
       </li>
     );
