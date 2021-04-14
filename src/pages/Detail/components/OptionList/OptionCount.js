@@ -12,7 +12,7 @@ class OptionCount extends Component {
           <button className="down">
             <AiOutlineMinus />
           </button>
-          <input type="button" />
+          <input type="button" value="1" />
           <button className="up">
             <AiOutlinePlus />
           </button>

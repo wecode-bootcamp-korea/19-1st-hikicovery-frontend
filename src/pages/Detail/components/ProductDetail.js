@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProductImage from './ProductImage';
+import ProductContent from './ProductContent/ProductContent';
 import ProductOption from './ProductOption/ProductOption';
 import './ProductDetail.scss';
 
@@ -8,7 +8,7 @@ class ProductDetail extends Component {
     return (
       <div className="ProductDetail">
         <section className="contentProductDetail">
-          <ProductImage />
+          <ProductContent />
           <ProductOption />
         </section>
       </div>
