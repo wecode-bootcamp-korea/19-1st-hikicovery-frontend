@@ -1,0 +1,40 @@
+.FixMenuBar_wrapper {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+
+  .FixMenuBar_menu {
+    margin-bottom: 5px;
+  }
+
+  .FixMenuBar_button {
+    height: 35px;
+    width: 75px;
+    background-color: white;
+    cursor: pointer;
+
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .quick_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    background-color: white;
+
+    a {
+      color: #666;
+    }
+
+    a:hover {
+      border-bottom: 1px solid black;
+      color: black;
+    }
+  }
+}
