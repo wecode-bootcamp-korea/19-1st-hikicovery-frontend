@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+    "shoes_name": "버킷 디버커 웨어",
+    "shoes_price": "123,000 원",
+    "shoes_color": "red",
+    "shoes_size_list": ["230", "240", "250", "245"]
+  },
+  {
+    "id": 2,
+    "img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+    "shoes_name": "버킷 디버커 웨어",
+    "shoes_price": "123,000 원",
+    "shoes_color": "red"
+  },
+  {
+    "id": 3,
+    "img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+    "shoes_name": "버킷 디버커 웨어",
+    "shoes_price": "123,000 원",
+    "shoes_color": "red"
+  },
+  {
+    "id": 4,
+    "img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+    "shoes_name": "버킷 디버커 웨어",
+    "shoes_price": "123,000 원",
+    "shoes_color": "red"
+  }
+]
