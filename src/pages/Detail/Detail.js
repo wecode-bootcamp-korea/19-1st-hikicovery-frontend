@@ -5,7 +5,7 @@ import './Detail.scss';
 class Detail extends Component {
   render() {
     return (
-      <div>
+      <div className="Detail">
         <div className="wrap">
           <nav>nav 자리</nav>
           <ProductDetail></ProductDetail>

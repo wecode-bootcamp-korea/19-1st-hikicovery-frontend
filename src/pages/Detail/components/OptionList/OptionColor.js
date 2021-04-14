@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ColorList from './ColorList';
+import ColorList from './List/ColorList';
+import './OptionColor.scss';
 
 class OptionColor extends Component {
   constructor() {
@@ -20,12 +21,13 @@ class OptionColor extends Component {
         });
       });
   }
+
   render() {
     return (
-      <li className="payment_option_color">
-        <ul className="payment_option_colorbox">
-          <p className="payment_option_title">색상</p>
-          <ul className="payment_color_listbox">
+      <li className="optionColor">
+        <ul className="paymentOptionColorbox">
+          <p className="paymentOptionTitle">색상</p>
+          <ul className="paymentColorListbox">
             {this.state.colorList.map(element => {
               return <ColorList key={element.id} images={element.images} />;
             })}

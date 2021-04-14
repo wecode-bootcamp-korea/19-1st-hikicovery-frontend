@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import SizeList from './SizeList';
+import SizeList from './List/SizeList';
+import './OptionSize.scss';
 
 class OptionSize extends Component {
   constructor() {
@@ -22,19 +23,17 @@ class OptionSize extends Component {
   }
   render() {
     return (
-      <div>
-        <li className="payment_option_size">
-          <p className="payment_option_title">사이즈</p>
-          <ul className="payment_size_listbox">
-            {this.state.sizeList.map(element => {
-              return <SizeList key={element.id} size={element.size} />;
-            })}
-          </ul>
-          <p>
-            <a href="/">Size Guide</a>
-          </p>
-        </li>
-      </div>
+      <li className="optionSize">
+        <p className="paymentOptionTitle">사이즈</p>
+        <ul className="paymentSizeListbox">
+          {this.state.sizeList.map(element => {
+            return <SizeList key={element.id} size={element.size} />;
+          })}
+        </ul>
+        <p>
+          <a href="/">Size Guide</a>
+        </p>
+      </li>
     );
   }
 }

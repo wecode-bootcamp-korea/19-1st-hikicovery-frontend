@@ -1,0 +1,15 @@
+@import '../../../Styles/Common.scss';
+
+.sizeList {
+  button {
+    width: 40px;
+    height: 20px;
+    margin: 3px;
+    line-height: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    cursor: pointer;
+  }
+}

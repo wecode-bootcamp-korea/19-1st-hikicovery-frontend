@@ -1,0 +1,24 @@
+@import '../../Styles/Common.scss';
+
+.optionSize {
+  @extend %flex-spacebetween;
+  padding: 20px 0;
+
+  .paymentOptionTitle {
+    font-size: 14px;
+    padding-right: 30px;
+  }
+
+  .paymentSizeListbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 184px;
+  }
+
+  P {
+    a {
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+}

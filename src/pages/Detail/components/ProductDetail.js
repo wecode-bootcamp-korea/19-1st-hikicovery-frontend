@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-//import './ProductDetail.scss';
 import ProductImage from './ProductImage';
-import ProductOption from './ProductOption';
+import ProductOption from './ProductOption/ProductOption';
+import './ProductDetail.scss';
 
 class ProductDetail extends Component {
   render() {
     return (
-      <section className="content_product_detail">
-        <ProductImage />
-        <ProductOption />
-      </section>
+      <div className="ProductDetail">
+        <section className="contentProductDetail">
+          <ProductImage />
+          <ProductOption />
+        </section>
+      </div>
     );
   }
 }
