@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SizeList.scss';
+import './ColorList.scss';
 
 class ColorList extends Component {
   render() {
