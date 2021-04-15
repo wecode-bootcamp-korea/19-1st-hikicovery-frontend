@@ -1,0 +1,12 @@
+.catagoryWrapper {
+  padding: 0 10px;
+
+  .catagoryList {
+    margin: 5px 0;
+    font-style: italic;
+  }
+
+  .catagoryList:hover {
+    transform: scale(1.1);
+  }
+}
