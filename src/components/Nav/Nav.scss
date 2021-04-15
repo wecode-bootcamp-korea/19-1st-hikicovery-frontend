@@ -1,56 +1,45 @@
-.nav_wrapper {
+.nav {
   position: fixed;
   top: 30px;
   left: 30px;
   width: 180px;
 
-  .under_bar {
-    border: 1px solid black;
+  .underBar {
+    margin: 0 auto;
+    height: 3px;
+    background: black;
   }
 
-  .nav_img_box {
+  .navImgBox {
     display: flex;
     justify-content: center;
     margin: 15px 0;
     height: 34px;
   }
 
-  .nav_search_box {
+  .navSearchBox {
     display: flex;
     justify-content: center;
     margin: 5px 10px;
 
-    .search_button {
+    .searchButton {
       width: 30px;
       background-color: transparent;
     }
 
-    .disabled_search_button {
+    .disabledSearchButton {
       display: none;
     }
 
-    .search_input_box {
+    .searchInputBox {
       display: flex;
 
-      .search_input {
+      .searchInput {
         padding: 10px 10px;
         height: 100%;
         width: 150px;
         background-color: transparent;
       }
-    }
-  }
-
-  .catagory_wrapper {
-    padding: 0 10px;
-
-    .catagory_list {
-      margin: 5px 0;
-      font-style: italic;
-    }
-
-    .catagory_list:hover {
-      transform: scale(1.1);
     }
   }
 }

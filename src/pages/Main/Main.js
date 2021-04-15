@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import FixMenuBar from '../../components/FixMenuBar/FixMenuBar';
 import './Main.scss';
-
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 class Main extends Component {
@@ -35,19 +34,19 @@ class Main extends Component {
     const { mainBackImgList, imgIndex } = this.state;
     const { prev, next } = this;
     return (
-      <div className="main_wrapper">
-        <div className="main_backImg_wrapper">
+      <div className="main">
+        <div className="mainBackImgWrapper">
           <img
             src={mainBackImgList[imgIndex].url}
             alt="메인배경이미지"
             className=""
           />
         </div>
-        <div className="main_slide_controller">
-          <button onClick={prev} className="main_prev_button">
+        <div className="mainSlideController">
+          <button onClick={prev} className="mainPrevButton">
             <FaArrowLeft></FaArrowLeft>
           </button>
-          <button onClick={next} className="main_next_button">
+          <button onClick={next} className="mainNextButton">
             <FaArrowRight></FaArrowRight>
           </button>
         </div>

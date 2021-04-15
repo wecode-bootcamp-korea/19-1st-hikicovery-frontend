@@ -1,15 +1,17 @@
-.FixMenuBar_wrapper {
+.fixMenuBar {
   position: fixed;
   top: 30px;
   right: 50px;
 
-  .FixMenuBar_menu {
+  .fixMenuBarMenu {
     margin-bottom: 5px;
+    border: 1px solid black;
   }
 
-  .FixMenuBar_button {
+  .fixMenuBarButton {
     height: 35px;
     width: 75px;
+    border-bottom: 1px solid black;
     background-color: white;
     cursor: pointer;
 
@@ -19,16 +21,16 @@
     }
   }
 
-  .quick_menu {
+  .quickMenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px;
     font-size: 12px;
     background-color: white;
 
     a {
+      margin: 5px 0;
       color: #666;
     }
 

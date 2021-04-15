@@ -20,27 +20,27 @@ class FixMenuBar extends Component {
     const { showQuickMenu } = this;
     const { quickMenu } = this.state;
     return (
-      <aside className="FixMenuBar_wrapper">
+      <aside className="fixMenuBar">
         <ul>
-          <li className="FixMenuBar_menu">
-            <button onClick={showQuickMenu} className="FixMenuBar_button">
+          <li className="fixMenuBarMenu">
+            <button onClick={showQuickMenu} className="fixMenuBarButton">
               <BsPersonFill></BsPersonFill>
             </button>
             {quickMenu && (
-              <div className="quick_menu">
-                <Link to="">LOG-IN</Link>
-                <Link to="">회원가입</Link>
+              <div className="quickMenu">
+                <Link to="/login">LOG-IN</Link>
+                <Link to="/signup">회원가입</Link>
                 <Link to="">마이페이지</Link>
               </div>
             )}
           </li>
-          <li className="FixMenuBar_menu">
-            <button className="FixMenuBar_button">
+          <li className="fixMenuBarMenu">
+            <button className="fixMenuBarButton">
               <BsBagFill></BsBagFill>
             </button>
           </li>
-          <li className="FixMenuBar_menu">
-            <button className="FixMenuBar_button">
+          <li className="fixMenuBarMenu">
+            <button className="fixMenuBarButton">
               <MdWatchLater></MdWatchLater>
             </button>
           </li>
