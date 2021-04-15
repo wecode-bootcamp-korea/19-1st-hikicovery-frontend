@@ -1,0 +1,85 @@
+@import '../../../styles/Common.scss';
+.list {
+  width: 80%;
+  margin: 0 auto;
+  border-top: 2.5px solid #000;
+  padding: 30px 0;
+
+  .filter {
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .firstFilter {
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          position: relative;
+          margin-right: 40px;
+          font-size: 14px;
+          word-break: keep-all;
+
+          ::after {
+            content: '';
+            position: absolute;
+            right: -21px;
+            top: 4px;
+            width: 1px;
+            height: 12px;
+            background: #ddd;
+          }
+
+          a {
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .lastFilter {
+      .filterSelect {
+        width: 120px;
+        padding: 0 10px;
+        border: 0;
+      }
+
+      .filterButton {
+        position: relative;
+        width: 120px;
+        padding-right: 10px;
+        font-size: 14px;
+        background: none;
+        cursor: pointer;
+
+        ::after {
+          content: '';
+          position: absolute;
+          left: 5px;
+          top: 6px;
+          width: 10px;
+          height: 12px;
+          background: #ddd;
+          background: red;
+        }
+
+        svg {
+          border: 0;
+          position: absolute;
+          top: 4px;
+          right: 23px;
+        }
+      }
+    }
+  }
+
+  .shoesCardUl {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}

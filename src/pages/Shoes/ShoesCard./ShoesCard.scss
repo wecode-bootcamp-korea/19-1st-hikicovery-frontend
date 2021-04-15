@@ -1,0 +1,26 @@
+@import '../../../styles/Common.scss';
+
+.shoesCardLi {
+  width: 100%;
+  border: 0.5px solid #ddd;
+
+  .shoesCardImg {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bestItemInfo {
+    text-align: center;
+    margin-top: 30px;
+    .txtSize {
+      width: 80%;
+      border-top: 1px solid #000;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
+  }
+}
