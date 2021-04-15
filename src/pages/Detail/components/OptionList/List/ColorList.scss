@@ -1,9 +1,9 @@
-@import '../../../Styles/Common.scss';
+@import '../../../../../styles/Common.scss';
 
 .paymentColorList {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
   margin: 3px;
+  background-color: #f8f8f8;
+  border: $lightgray;
 
   a {
     cursor: pointer;

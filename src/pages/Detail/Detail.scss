@@ -1,26 +1,26 @@
-@import './Styles/Common.scss';
+@import '../../styles/Common.scss';
 
 .wrap {
   @extend %flex-center;
 
   nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 260px;
     height: 400px;
     background-color: #000;
-    position: fixed;
     color: #fff;
     text-align: center;
-    top: 0;
-    left: 0;
     z-index: 10;
   }
 
   .fixbar {
-    width: 115px;
-    height: 200px;
-    background-color: #000;
     position: fixed;
     top: 0;
     right: 0;
+    width: 115px;
+    height: 200px;
+    background-color: #000;
   }
 }

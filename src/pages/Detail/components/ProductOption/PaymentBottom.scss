@@ -1,4 +1,4 @@
-@import '../../Styles/Common.scss';
+@import '../../../../styles/Common.scss';
 
 .paymentBottom {
   @extend %flex-spacebetween;
@@ -31,9 +31,9 @@
     }
 
     .heartCount {
-      font-size: 13px;
       margin-left: 10px;
       padding-bottom: 7px;
+      font-size: 13px;
     }
   }
 }

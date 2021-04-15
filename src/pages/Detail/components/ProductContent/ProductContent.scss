@@ -1,8 +1,7 @@
-@import '../../Styles/Common.scss';
+@import '../../../../styles/Common.scss';
 
 .productContent {
   width: 790px;
-  height: 4000px;
 
   .contentMenu {
     width: 100%;
@@ -40,8 +39,8 @@
     }
   }
 
-  #tabmenu2,
-  #tabmenu3 {
+  .tabmenu2,
+  .tabmenu3 {
     display: none;
   }
 }

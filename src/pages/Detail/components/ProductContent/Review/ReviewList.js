@@ -6,6 +6,17 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 class ReviewList extends Component {
   render() {
+    const {
+      score,
+      userId,
+      color,
+      size,
+      date,
+      text,
+      sizetext,
+      colortext,
+      image,
+    } = this.props;
     return (
       <li className="reviewList">
         <ul className="reviewInnerTop">
@@ -17,19 +28,21 @@ class ReviewList extends Component {
               <AiFillStar />
               <AiFillStar />
             </div>
-            <p className="reviewScore">5점</p>
-            <p className="reviewProduct">(컬러 : WHITE / 사이즈 : 240)</p>
+            <p className="reviewScore">{score}점</p>
+            <p className="reviewProduct">
+              (컬러 : {color} / 사이즈 : {size})
+            </p>
             <MdPhoto className="imgIcon" />
           </li>
           <li>
-            <p className="reviewId">jsn01**</p>
-            <p className="reviewDate">2021-04-14</p>
+            <p className="reviewId">{userId}</p>
+            <p className="reviewDate">{date}</p>
           </li>
         </ul>
         <div className="reviewInnerBottom">
           <ul className="bottomBox">
             <li>
-              <p>생각한 제품이랑 거의 동일하네요 화면이랑 비슷해요!</p>
+              <p>{text}</p>
             </li>
             <li>
               <AiOutlinePlus />
@@ -38,15 +51,12 @@ class ReviewList extends Component {
           <div className="reviewDetail">
             <ul className="reviewDetailInner">
               <li className="reviewTitle">사이즈</li>
-              <li className="reviewText">딱 맞아요</li>
+              <li className="reviewText">{sizetext}</li>
               <li className="reviewTitle">컬러</li>
-              <li className="reviewText">색상과 같아요</li>
+              <li className="reviewText">{colortext}</li>
             </ul>
             <div className="reviewImg">
-              <img
-                src="https://static.discovery-expedition.com/images/goods/review/20210414/44668606482151732.jpg"
-                alt="후기사진"
-              />
+              <img src={image} alt="후기사진" />
             </div>
           </div>
         </div>

@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
 import ReviewList from './Review/ReviewList';
-import './Review/ProductReview.scss';
+import './ProductReview.scss';
 
 class ProductReview extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reviewList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/DetailReviewdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          reviewList: data,
+        });
+      });
+  }
+
   render() {
+    const { reviewList } = this.state;
     return (
       <div class="productReview">
         <div class="reviewWrap">
@@ -27,7 +45,34 @@ class ProductReview extends Component {
           </div>
         </div>
         <ul className="review">
-          <ReviewList />
+          {reviewList.map(element => {
+            const {
+              id,
+              score,
+              userId,
+              color,
+              size,
+              date,
+              text,
+              sizetext,
+              colortext,
+              image,
+            } = element;
+            return (
+              <ReviewList
+                key={id}
+                score={score}
+                userId={userId}
+                color={color}
+                size={size}
+                date={date}
+                text={text}
+                sizetext={sizetext}
+                colortext={colortext}
+                image={image}
+              />
+            );
+          })}
         </ul>
       </div>
     );

@@ -1,15 +1,15 @@
-@import '../../../Styles/Common.scss';
+@import '../../../../../styles/Common.scss';
 
 .sizeList {
   button {
     width: 40px;
     height: 20px;
     margin: 3px;
+    background-color: #fff;
+    border: $lightgray;
+    color: #666;
     line-height: 10px;
     font-size: 12px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    color: #666;
     cursor: pointer;
   }
 }

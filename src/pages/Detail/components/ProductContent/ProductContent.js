@@ -19,7 +19,7 @@ class ProductContent extends Component {
             <a href="/">배송/반품/교환정보</a>
           </li>
         </ul>
-        <div className="productTabmenu" id="tabmenu1">
+        <div className="productTabmenu tabmenu1">
           <h3>상품리뷰</h3>
           <p className="bold">
             상품을 구매하신 고객님의 리뷰가 총 24개 있습니다.
@@ -29,10 +29,8 @@ class ProductContent extends Component {
             (텍스트 리뷰 300포인트, 포토리뷰 1,000 포인트)
           </p>
         </div>
-        <div className="productTabmenu" id="tabmenu1">
-          상품 고시정보
-        </div>
-        <div className="productTabmenu" id="tabmenu1">
+        <div className="productTabmenu tabmenu2">상품 고시정보</div>
+        <div className="productTabmenu tabmenu3">
           배송 반품 교환 정보 입니다.
         </div>
         <ProductReview />

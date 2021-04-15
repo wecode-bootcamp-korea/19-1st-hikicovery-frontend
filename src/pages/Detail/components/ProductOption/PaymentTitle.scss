@@ -1,4 +1,4 @@
-@import '../../Styles/Common.scss';
+@import '../../../../styles/Common.scss';
 
 .paymentTitle {
   width: 100%;
@@ -10,9 +10,9 @@
 }
 
 .productCode {
-  font-size: 14px;
-  color: #999;
   margin: 5px 0;
+  color: #999;
+  font-size: 14px;
 }
 
 .productPrice {

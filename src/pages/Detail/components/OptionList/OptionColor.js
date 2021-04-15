@@ -3,36 +3,24 @@ import ColorList from './List/ColorList';
 import './OptionColor.scss';
 
 class OptionColor extends Component {
-  constructor() {
-    super();
-    this.state = {
-      colorList: [],
-    };
-  }
-
-  componentDidMount() {
-    fetch('/data/DetailColordata.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          colorList: data,
-        });
-      });
-  }
-
   render() {
+    const { colorList } = this.props;
     return (
       <li className="optionColor">
-        <ul className="paymentOptionColorbox">
+        <div className="paymentOptionColorbox">
           <p className="paymentOptionTitle">색상</p>
           <ul className="paymentColorListbox">
-            {this.state.colorList.map(element => {
-              return <ColorList key={element.id} images={element.images} />;
+            {colorList.map(element => {
+              return (
+                <ColorList
+                  key={element.id}
+                  images={element.images}
+                  colorList={colorList}
+                />
+              );
             })}
           </ul>
-        </ul>
+        </div>
       </li>
     );
   }
