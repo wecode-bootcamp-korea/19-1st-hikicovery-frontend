@@ -10,13 +10,7 @@ class OptionSize extends Component {
         <p className="paymentOptionTitle">사이즈</p>
         <ul className="paymentSizeListbox">
           {sizeList.map(element => {
-            return (
-              <SizeList
-                key={element.id}
-                size={element.size}
-                sizeList={sizeList}
-              />
-            );
+            return <SizeList key={element.id} size={element.size} />;
           })}
         </ul>
         <p>

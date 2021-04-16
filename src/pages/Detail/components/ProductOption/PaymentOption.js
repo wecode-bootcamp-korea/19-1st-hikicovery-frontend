@@ -15,13 +15,14 @@ class PaymentOption extends Component {
   }
 
   componentDidMount() {
-    fetch('/data/DetailColordata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          colorList: data,
-        });
-      });
+    //   fetch('/data/DetailColordata.json')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       this.setState({
+    //         colorList: data,
+    //       });
+    //       console.log(data);
+    //     });
 
     fetch('/data/DetailSizedata.json')
       .then(res => res.json())
