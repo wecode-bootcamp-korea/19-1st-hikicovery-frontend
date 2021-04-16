@@ -8,7 +8,7 @@ class PaymentBottom extends Component {
     super();
     this.state = {
       heartCount: 0,
-      Liked: false,
+      liked: false,
     };
   }
 
@@ -19,13 +19,13 @@ class PaymentBottom extends Component {
   };
 
   toggleHeart = () => {
-    const { Liked } = this.state;
+    const { liked } = this.state;
     this.setState({
-      Liked: !Liked,
+      liked: !liked,
     });
   };
   render() {
-    const { Liked, heartCount } = this.state;
+    const { liked, heartCount } = this.state;
     return (
       <ul className="paymentBottom">
         <li>
@@ -36,14 +36,14 @@ class PaymentBottom extends Component {
             <MdShare />
           </button>
           <button className="heart" onClick={this.toggleHeart}>
-            {Liked ? (
+            {liked ? (
               <FaHeart className="heartFillIcon" />
             ) : (
               <FaRegHeart className="heartIcon" />
             )}
           </button>
           <p className="heartCount" onChange={this.onChangeCount}>
-            {Liked ? heartCount + 1 : heartCount}
+            {liked ? heartCount + 1 : heartCount}
           </p>
         </li>
       </ul>

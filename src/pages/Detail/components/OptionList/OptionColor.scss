@@ -3,8 +3,6 @@
 .optionColor {
   .paymentOptionColorbox {
     @extend %flex-spacebetween;
-    width: 100%;
-    height: auto;
 
     .paymentOptionTitle {
       font-size: 14px;

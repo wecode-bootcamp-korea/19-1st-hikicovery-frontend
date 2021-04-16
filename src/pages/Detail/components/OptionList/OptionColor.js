@@ -16,7 +16,7 @@ class OptionColor extends Component {
                   key={element.id}
                   images={element.images}
                   colorList={colorList}
-                ></ColorList>
+                />
               );
             })}
           </ul>

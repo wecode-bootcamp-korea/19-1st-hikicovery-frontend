@@ -23,9 +23,9 @@ class ProductReview extends Component {
   render() {
     const { reviewList } = this.state;
     return (
-      <div class="productReview">
-        <div class="reviewWrap">
-          <ul class="reviewTabMenu">
+      <div className="productReview">
+        <div className="reviewWrap">
+          <ul className="reviewTabMenu">
             <li>
               전체<span className="red">(42)</span>
             </li>
@@ -46,30 +46,18 @@ class ProductReview extends Component {
         </div>
         <ul className="review">
           {reviewList.map(element => {
-            const {
-              id,
-              score,
-              userId,
-              color,
-              size,
-              date,
-              text,
-              sizetext,
-              colortext,
-              image,
-            } = element;
             return (
               <ReviewList
-                key={id}
-                score={score}
-                userId={userId}
-                color={color}
-                size={size}
-                date={date}
-                text={text}
-                sizetext={sizetext}
-                colortext={colortext}
-                image={image}
+                key={element.id}
+                score={element.score}
+                userId={element.userId}
+                color={element.color}
+                size={element.size}
+                date={element.date}
+                text={element.text}
+                sizetext={element.sizetext}
+                colortext={element.colortext}
+                image={element.image}
               />
             );
           })}

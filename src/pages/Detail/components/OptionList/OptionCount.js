@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './OptionCount.scss';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import './OptionCount.scss';
 
 class OptionCount extends Component {
   constructor() {
@@ -11,21 +11,24 @@ class OptionCount extends Component {
     };
   }
   onIncrease = () => {
-    console.log('증가');
-    this.setState({
-      count: this.state.count + 1,
-    });
-    if (this.state.count > 7) {
-      alert('주문 가능한 최소 수량은 8 입니다.');
+    const { count } = this.state;
+    if (count < 8) {
+      this.setState({
+        count: this.state.count + 1,
+      });
+    } else {
+      alert('주문 최대 가능 수량은 1입니다.');
     }
   };
 
   onDecrease = () => {
-    this.setState({
-      count: this.state.count - 1,
-    });
-    if (this.state.count < 1) {
-      alert('주문 가능한 최소 수량은 1 입니다.');
+    const { count } = this.state;
+    if (count < 1) {
+      this.setState({
+        count: this.state.count + -1,
+      });
+    } else {
+      alert('주문 최소 가능 수량은 1입니다.');
     }
   };
 

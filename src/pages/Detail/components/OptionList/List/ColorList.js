@@ -10,18 +10,19 @@ class ColorList extends Component {
   }
 
   selectSizeBtn = () => {
+    const { select } = this.state;
     this.setState({
-      select: !this.state.select,
+      select: !select,
     });
   };
+
   render() {
     const { images } = this.props;
+    const { select } = this.state;
     return (
       <div className="colorList">
         <li
-          className={
-            this.state.select ? 'paymentColorList selected' : 'paymentColorList'
-          }
+          className={select ? 'paymentColorList selected' : 'paymentColorList'}
           onClick={this.selectSizeBtn}
         >
           <a href="/">
