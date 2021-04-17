@@ -2,6 +2,7 @@
 
 .wrap {
   @extend %flex-center;
+  margin: 0 220px;
 
   nav {
     position: fixed;

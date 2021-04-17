@@ -4,13 +4,22 @@ import './OptionSize.scss';
 
 class OptionSize extends Component {
   render() {
-    const { sizeList } = this.props;
+    const { sizeList, stock, stockSize, soldOut } = this.props;
+
     return (
       <li className="optionSize">
         <p className="paymentOptionTitle">사이즈</p>
         <ul className="paymentSizeListbox">
           {sizeList.map(element => {
-            return <SizeList key={element.id} size={element.size} />;
+            return (
+              <SizeList
+                key={element.id}
+                size={element.size}
+                stockSize={stockSize}
+                stock={stock}
+                soldOut={soldOut}
+              />
+            );
           })}
         </ul>
         <p>

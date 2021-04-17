@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProductDetail from './components/ProductDetail';
-import './Detail.scss';
+import './index.scss';
 
 class Detail extends Component {
   render() {

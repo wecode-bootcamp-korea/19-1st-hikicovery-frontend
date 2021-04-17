@@ -9,7 +9,7 @@ class ColorList extends Component {
     };
   }
 
-  selectSizeBtn = () => {
+  selectColorBtn = () => {
     const { select } = this.state;
     this.setState({
       select: !select,
@@ -23,11 +23,9 @@ class ColorList extends Component {
       <div className="colorList">
         <li
           className={select ? 'paymentColorList selected' : 'paymentColorList'}
-          onClick={this.selectSizeBtn}
+          onClick={this.selectColorBtn}
         >
-          <a href="/">
-            <img src={images} alt="색상별 제품사진" />
-          </a>
+          <img src={images} alt="색상별 제품사진" />
         </li>
       </div>
     );

@@ -4,14 +4,11 @@
   margin: 3px;
   background-color: #f8f8f8;
   border: $lightgray;
+  cursor: pointer;
 
-  a {
-    cursor: pointer;
-
-    img {
-      width: 35px;
-      height: 50px;
-    }
+  img {
+    width: 35px;
+    height: 50px;
   }
 }
 

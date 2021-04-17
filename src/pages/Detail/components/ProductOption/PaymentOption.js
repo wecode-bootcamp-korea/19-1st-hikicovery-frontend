@@ -6,40 +6,31 @@ import OptionDelivery from '../OptionList/OptionDelivery';
 import './PaymentOption.scss';
 
 class PaymentOption extends Component {
-  constructor() {
-    super();
-    this.state = {
-      colorList: [],
-      sizeList: [],
-    };
-  }
-
-  componentDidMount() {
-    //   fetch('/data/DetailColordata.json')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //       this.setState({
-    //         colorList: data,
-    //       });
-    //       console.log(data);
-    //     });
-
-    fetch('/data/DetailSizedata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          sizeList: data,
-        });
-      });
-  }
-
   render() {
-    const { colorList, sizeList } = this.state;
+    const {
+      colorList,
+      sizeList,
+      count,
+      stock,
+      stockSize,
+      onIncrease,
+      onDecrease,
+      soldOut,
+    } = this.props;
     return (
       <ul className="paymentOption">
         <OptionColor colorList={colorList} />
-        <OptionSize sizeList={sizeList} />
-        <OptionCount />
+        <OptionSize
+          sizeList={sizeList}
+          stockSize={stockSize}
+          stock={stock}
+          soldOut={soldOut}
+        />
+        <OptionCount
+          count={count}
+          onIncrease={onIncrease}
+          onDecrease={onDecrease}
+        />
         <OptionDelivery />
       </ul>
     );

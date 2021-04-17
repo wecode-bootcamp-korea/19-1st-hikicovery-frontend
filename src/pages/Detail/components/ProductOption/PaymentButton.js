@@ -6,7 +6,7 @@ class PaymentButton extends Component {
     return (
       <div className="paymentButton">
         <button>BUY NOW</button>
-        <button>Add to cart</button>
+        <button onClick={this.OnModal}>Add to cart</button>
       </div>
     );
   }

@@ -3,11 +3,12 @@ import './PaymentTitle.scss';
 
 class PaymentTitle extends Component {
   render() {
+    const { name, price } = this.props;
     return (
       <div className="paymentTitle">
-        <h3 className="productName">{this.props.name}</h3>
+        <h3 className="productName">{name}</h3>
         <h5 className="productCode">DXSHF1111_GR(그레이)/봄</h5>
-        <h4 className="productPrice">109,000원</h4>
+        <h4 className="productPrice">{price.toLocaleString()}</h4>
       </div>
     );
   }

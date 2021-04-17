@@ -9,20 +9,24 @@ class SizeList extends Component {
     };
   }
 
-  selectColorBtn = () => {
+  selectSizeBtn = () => {
+    const { select } = this.state;
     this.setState({
-      select: !this.state.select,
+      select: !select,
     });
   };
 
   render() {
+    console.log(this.props.soldOut);
+    const { size, soldOut } = this.props;
+    const { select } = this.state;
     return (
       <li className="sizeList">
         <button
-          className={this.state.select ? 'selected' : ''}
-          onClick={this.selectColorBtn}
+          className={select ? 'selected' : '' && soldOut ? 'soldOut' : ''}
+          onClick={this.selectSizeBtn}
         >
-          {this.props.size}
+          {size}
         </button>
       </li>
     );

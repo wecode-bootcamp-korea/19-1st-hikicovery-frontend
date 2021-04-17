@@ -64,38 +64,38 @@
 
     .reviewDetail {
       width: 100%;
-      height: 500px;
       margin-top: 30px;
 
       .reviewDetailInner {
         @extend %flex-start;
 
         .reviewTitle {
-          margin-right: 20px;
+          margin-right: 10px;
           font-size: 16px;
         }
 
         .reviewText {
+          margin-right: 20px;
           padding: 2px 5px;
           background-color: #000;
           color: #fff;
           font-size: 13px;
         }
       }
+
+      .reviewImg {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     .hide {
       display: none;
-    }
-
-    .reviewImg {
-      width: 100%;
-      height: auto;
-      margin: 20px 0;
-
-      img {
-        width: 100%;
-      }
     }
   }
 }
