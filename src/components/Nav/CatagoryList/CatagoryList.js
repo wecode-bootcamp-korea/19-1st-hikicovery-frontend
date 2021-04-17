@@ -1,32 +1,35 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CatagoryItem from './CatagoryItem/CatagoryItem';
 import './CatagoryList.scss';
 
 class CatagoryList extends Component {
   state = {
-    catagoryList: [
-      'MEN',
-      'WOMEN',
-      'KIDS',
-      'SHOES',
-      'ACC',
-      'OUTLET',
-      'PROMOTION',
-      '#STYLE in SNS',
-      'DISCOVERER',
-    ],
+    isView: false,
   };
+
+  showCatagory = () => {
+    const { isView } = this.state;
+    this.setState({
+      isView: isView ? false : true,
+    });
+  };
+
   render() {
-    const { catagoryList } = this.state;
+    const { isView } = this.state;
+    const { showCatagory } = this;
     return (
       <ul className="catagoryWrapper">
         {catagoryList.map((catagory, index) => {
           return (
-            <li className="catagoryList" key={index}>
-              <Link to="https://www.discovery-expedition.com/main/mall/view">
-                <span>{catagory}</span>
-              </Link>
-            </li>
+            <>
+              <li className="catagoryList" key={index} onClick={showCatagory}>
+                <Link>
+                  <span>{catagory}</span>
+                </Link>
+                <CatagoryItem catagory={catagory} isView={isView} />
+              </li>
+            </>
           );
         })}
       </ul>
@@ -35,3 +38,15 @@ class CatagoryList extends Component {
 }
 
 export default CatagoryList;
+
+const catagoryList = [
+  'MEN',
+  'WOMEN',
+  'KIDS',
+  'SHOES',
+  'ACC',
+  'OUTLET',
+  'PROMOTION',
+  '#STYLE in SNS',
+  'DISCOVERER',
+];

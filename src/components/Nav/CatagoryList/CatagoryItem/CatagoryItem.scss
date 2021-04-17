@@ -1,0 +1,14 @@
+// .isView {
+//   display: none;
+// }
+.catagoryBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.catagoryItem:hover {
+  transform: scale(1.1);
+}
+.catagoryItem {
+  font-size: 12px;
+}
