@@ -10,9 +10,8 @@ class ColorList extends Component {
   }
 
   selectColorBtn = () => {
-    const { select } = this.state;
     this.setState({
-      select: !select,
+      select: true,
     });
   };
 

@@ -3,25 +3,18 @@ import ReviewList from './Review/ReviewList';
 import './ProductReview.scss';
 
 class ProductReview extends Component {
-  constructor() {
-    super();
-    this.state = {
-      reviewList: [],
-    };
-  }
-
-  componentDidMount() {
-    fetch('/data/DetailReviewdata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          reviewList: data,
-        });
-      });
-  }
+  // updateSort = () => {
+  //   const { reviewList } = this.props;
+  //   reviewList.filter(element => {
+  //     return element.score.sort(function (a, b) {
+  //       return b - a;
+  //     });
+  //   });
+  //   console.log(this.updateSort);
+  // };
 
   render() {
-    const { reviewList } = this.state;
+    const { reviewList } = this.props;
     return (
       <div className="productReview">
         <div className="reviewWrap">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AiFillStar, AiOutlinePlus } from 'react-icons/ai';
+import { AiFillStar, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import { MdPhoto } from 'react-icons/md';
 import './ReviewList.scss';
 
@@ -7,7 +7,7 @@ class ReviewList extends Component {
   constructor() {
     super();
     this.state = {
-      show: true,
+      show: false,
     };
   }
 
@@ -47,11 +47,11 @@ class ReviewList extends Component {
             <li>
               <p>{this.props.text}</p>
             </li>
-            <li>
-              <AiOutlinePlus onClick={this.clickPlusBtn} />
+            <li onClick={this.clickPlusBtn}>
+              {this.state.show ? <AiOutlineMinus /> : <AiOutlinePlus />}
             </li>
           </ul>
-          <div className={show ? 'reviewDetail hide' : 'reviewDetail'}>
+          <div className={show ? 'reviewDetail' : 'reviewDetail hide'}>
             <ul className="reviewDetailInner">
               <li className="reviewTitle">사이즈</li>
               <li className="reviewText">{this.props.sizetext}</li>

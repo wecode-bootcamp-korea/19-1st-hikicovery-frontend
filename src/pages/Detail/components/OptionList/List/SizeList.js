@@ -10,9 +10,8 @@ class SizeList extends Component {
   }
 
   selectSizeBtn = () => {
-    const { select } = this.state;
     this.setState({
-      select: !select,
+      select: true,
     });
   };
 

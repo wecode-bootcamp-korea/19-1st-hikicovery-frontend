@@ -16,6 +16,7 @@ class ProductDetail extends Component {
       sizeList: [],
       count: 1,
       select: false,
+      reviewList: [],
     };
   }
 
@@ -86,6 +87,14 @@ class ProductDetail extends Component {
           sizeList: data,
         });
       });
+
+    fetch('/data/DetailReviewdata.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          reviewList: data,
+        });
+      });
   }
 
   render() {
@@ -99,11 +108,12 @@ class ProductDetail extends Component {
       sizeList,
       colorList,
       select,
+      reviewList,
     } = this.state;
     return (
       <div className="ProductDetail">
         <section className="contentProductDetail">
-          <ProductContent image={image} />
+          <ProductContent image={image} reviewList={reviewList} />
           <ProductOption
             name={name}
             price={price}
@@ -118,6 +128,7 @@ class ProductDetail extends Component {
             soldOut={this.soldOut}
             selectSizeBtn={this.selectSizeBtn}
             selectColorBtn={this.selectColorBtn}
+            reviewList={reviewList}
           />
         </section>
       </div>

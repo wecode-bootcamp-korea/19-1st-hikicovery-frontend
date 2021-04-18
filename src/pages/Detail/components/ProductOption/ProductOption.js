@@ -22,6 +22,7 @@ class ProductOption extends Component {
       selectColorBtn,
       select,
       soldOut,
+      reveiwList,
     } = this.props;
     return (
       <div className="productOption">
@@ -41,7 +42,7 @@ class ProductOption extends Component {
           selectColorBtn={selectColorBtn}
         />
         <PaymentButton />
-        <PaymentBottom />
+        <PaymentBottom reveiwList={reveiwList} />
       </div>
     );
   }
