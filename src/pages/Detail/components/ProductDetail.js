@@ -9,13 +9,10 @@ class ProductDetail extends Component {
     this.state = {
       name: '',
       price: 0,
-      stock: [],
+      product_stock: [],
       image: [],
-      soldOut: false,
-      colorList: [],
-      sizeList: [],
+      color: [],
       count: 1,
-      select: false,
       reviewList: [],
     };
   }
@@ -56,7 +53,7 @@ class ProductDetail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.0.206:8000/products/goods/1', {
+    fetch('http://172.30.1.35:8000/products/goods/7', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -65,28 +62,27 @@ class ProductDetail extends Component {
           name: res.product_info[0].name,
           price: res.product_info[0].price,
           image: res.product_info[0].image[0].image_url,
-          imageName: res.product_info[0].image[0].name,
-          stock: res.product_info[0].stock[0].stock,
-          stockSize: res.product_info[0].stock[0].size,
+          product_stock: res.product_info[0].product_stock,
+          color: res.product_info[0].color,
         });
-        console.log(res.product_info[0].image);
+        console.log(res.product_info[0].color);
       });
 
-    fetch('/data/DetailColordata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          colorList: data,
-        });
-      });
+    // fetch('/data/DetailColordata.json')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     this.setState({
+    //       colorList: data,
+    //     });
+    //   });
 
-    fetch('/data/DetailSizedata.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          sizeList: data,
-        });
-      });
+    // fetch('/data/DetailSizedata.json')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     this.setState({
+    //       sizeList: data,
+    //     });
+    //   });
 
     fetch('/data/DetailReviewdata.json')
       .then(res => res.json())
@@ -101,13 +97,10 @@ class ProductDetail extends Component {
     const {
       name,
       price,
-      stock,
       image,
-      stockSize,
       count,
-      sizeList,
-      colorList,
-      select,
+      product_stock,
+      color,
       reviewList,
     } = this.state;
     return (
@@ -117,17 +110,12 @@ class ProductDetail extends Component {
           <ProductOption
             name={name}
             price={price}
-            stock={stock}
-            stockSize={stockSize}
             count={count}
             onIncrease={this.onIncrease}
             onDecrease={this.onDecrease}
-            colorList={colorList}
-            sizeList={sizeList}
-            select={select}
+            color={color}
             soldOut={this.soldOut}
-            selectSizeBtn={this.selectSizeBtn}
-            selectColorBtn={this.selectColorBtn}
+            product_stock={product_stock}
             reviewList={reviewList}
           />
         </section>

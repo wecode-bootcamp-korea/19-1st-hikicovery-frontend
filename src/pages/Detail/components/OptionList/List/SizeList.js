@@ -16,13 +16,13 @@ class SizeList extends Component {
   };
 
   render() {
-    console.log(this.props.soldOut);
-    const { size, soldOut } = this.props;
+    const { size, stock } = this.props;
     const { select } = this.state;
+    console.log(this.props);
     return (
       <li className="sizeList">
         <button
-          className={select ? 'selected' : '' && soldOut ? 'soldOut' : ''}
+          className={select ? '' : 'selected' && stock === 0 ? 'soldOut' : ''}
           onClick={this.selectSizeBtn}
         >
           {size}

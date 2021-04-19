@@ -5,10 +5,10 @@ import './ProductContent.scss';
 
 class ProductContent extends Component {
   render() {
-    const { reviewList } = this.props;
+    const { reviewList, image } = this.props;
     return (
       <div className="productContent">
-        <ProductImage />
+        <ProductImage image={image} />
         <ul className="contentMenu">
           <li className="active">
             <a href="#tabmenu1">상품 리뷰</a>

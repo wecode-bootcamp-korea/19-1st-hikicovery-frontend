@@ -18,19 +18,18 @@ class OptionColor extends Component {
   };
 
   render() {
-    const { colorList } = this.props;
+    const { color } = this.props;
     const { select } = this.state;
     return (
       <li className="optionColor">
         <div className="paymentOptionColorbox">
           <p className="paymentOptionTitle">색상</p>
           <ul className="paymentColorListbox">
-            {colorList.map(element => {
+            {color.map(element => {
               return (
                 <ColorList
-                  key={element.id}
-                  images={element.images}
-                  colorList={colorList}
+                  key={element.product_id}
+                  image={element.product_image}
                   select={select}
                   selectColorBtn={this.selectColorBtn}
                 />

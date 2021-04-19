@@ -7,25 +7,12 @@ import './PaymentOption.scss';
 
 class PaymentOption extends Component {
   render() {
-    const {
-      colorList,
-      sizeList,
-      count,
-      stock,
-      stockSize,
-      onIncrease,
-      onDecrease,
-      soldOut,
-    } = this.props;
+    const { color, count, product_stock, onIncrease, onDecrease } = this.props;
+    console.log(this.props);
     return (
       <ul className="paymentOption">
-        <OptionColor colorList={colorList} />
-        <OptionSize
-          sizeList={sizeList}
-          stockSize={stockSize}
-          stock={stock}
-          soldOut={soldOut}
-        />
+        <OptionColor color={color} />
+        <OptionSize product_stock={product_stock} />
         <OptionCount
           count={count}
           onIncrease={onIncrease}

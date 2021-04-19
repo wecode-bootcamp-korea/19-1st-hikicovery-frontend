@@ -16,7 +16,8 @@ class ColorList extends Component {
   };
 
   render() {
-    const { images } = this.props;
+    console.log(this.props.product_image);
+    const { product_image } = this.props;
     const { select } = this.state;
     return (
       <div className="colorList">
@@ -24,7 +25,7 @@ class ColorList extends Component {
           className={select ? 'paymentColorList selected' : 'paymentColorList'}
           onClick={this.selectColorBtn}
         >
-          <img src={images} alt="색상별 제품사진" />
+          <img src={product_image} alt="색상별 제품사진" />
         </li>
       </div>
     );
