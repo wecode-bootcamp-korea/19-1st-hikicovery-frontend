@@ -3,23 +3,8 @@ import ColorList from './List/ColorList';
 import './OptionColor.scss';
 
 class OptionColor extends Component {
-  constructor() {
-    super();
-    this.state = {
-      select: false,
-    };
-  }
-
-  selectColorBtn = () => {
-    const { select } = this.state;
-    this.setState({
-      select: !select,
-    });
-  };
-
   render() {
-    const { color } = this.props;
-    const { select } = this.state;
+    const { color, handleClickColorList, isSelected } = this.props;
     return (
       <li className="optionColor">
         <div className="paymentOptionColorbox">
@@ -30,8 +15,9 @@ class OptionColor extends Component {
                 <ColorList
                   key={element.product_id}
                   image={element.product_image}
-                  select={select}
-                  selectColorBtn={this.selectColorBtn}
+                  isSelected={isSelected}
+                  id={element.product_id}
+                  handleClickColorList={handleClickColorList}
                 />
               );
             })}

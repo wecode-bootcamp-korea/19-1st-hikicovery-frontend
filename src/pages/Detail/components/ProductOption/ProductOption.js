@@ -8,31 +8,40 @@ import './ProductOption.scss';
 
 class ProductOption extends Component {
   render() {
-    // console.log(this.props);
     const {
-      name,
-      price,
-      product_stock,
       onDecrease,
       onIncrease,
       count,
-      color,
-      selectSizeBtn,
-      selectColorBtn,
+      handleClickColorList,
+      get,
+      isSelect,
+      season,
     } = this.props;
     return (
       <div className="productOption">
-        <PaymentTitle name={name} price={price} />
+        {get.map(element => {
+          return (
+            <PaymentTitle
+              name={element.name}
+              price={element.price}
+              season={season}
+            />
+          );
+        })}
         <PaymentBenefit />
-        <PaymentOption
-          product_stock={product_stock}
-          count={count}
-          onIncrease={onIncrease}
-          onDecrease={onDecrease}
-          color={color}
-          selectSizeBtn={selectSizeBtn}
-          selectColorBtn={selectColorBtn}
-        />
+        {get.map(element => {
+          return (
+            <PaymentOption
+              product_stock={element.product_stock}
+              count={count}
+              onIncrease={onIncrease}
+              onDecrease={onDecrease}
+              color={element.color}
+              isSelect={isSelect}
+              handleClickColorList={handleClickColorList}
+            />
+          );
+        })}
         <PaymentButton />
         <PaymentBottom />
       </div>

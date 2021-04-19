@@ -10,7 +10,6 @@ class ProductReview extends Component {
   //       return b - a;
   //     });
   //   });
-  //   console.log(this.updateSort);
   // };
 
   render() {

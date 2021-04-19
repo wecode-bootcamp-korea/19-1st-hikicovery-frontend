@@ -18,7 +18,6 @@ class SizeList extends Component {
   render() {
     const { size, stock } = this.props;
     const { select } = this.state;
-    console.log(this.props);
     return (
       <li className="sizeList">
         <button

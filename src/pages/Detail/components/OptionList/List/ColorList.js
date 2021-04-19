@@ -2,30 +2,20 @@ import React, { Component } from 'react';
 import './ColorList.scss';
 
 class ColorList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      select: false,
-    };
-  }
-
-  selectColorBtn = () => {
-    this.setState({
-      select: true,
-    });
-  };
-
   render() {
-    console.log(this.props.product_image);
-    const { product_image } = this.props;
-    const { select } = this.state;
+    const { image, handleClickColorList, id } = this.props;
+    const { isSelect } = this.props;
     return (
       <div className="colorList">
         <li
-          className={select ? 'paymentColorList selected' : 'paymentColorList'}
-          onClick={this.selectColorBtn}
+          className={
+            isSelect ? 'paymentColorList selected' : 'paymentColorList'
+          }
+          onClick={() => {
+            handleClickColorList(id);
+          }}
         >
-          <img src={product_image} alt="색상별 제품사진" />
+          <img src={image} alt="색상별 제품사진" />
         </li>
       </div>
     );
