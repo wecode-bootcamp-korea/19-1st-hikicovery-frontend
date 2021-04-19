@@ -1,0 +1,73 @@
+@import '../../styles/Common.scss';
+
+@import '../../styles/Common.scss';
+
+footer {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #f8f8f8;
+
+  .footerWrap {
+    @extend %flex-spacebetween;
+    padding: 30px;
+
+    .footerLeft {
+      width: 50%;
+
+      .footerNav {
+        .footerNavInner {
+          @extend %flex-spacebetween;
+          margin-bottom: 20px;
+          li {
+            position: relative;
+
+            &:after {
+              position: absolute;
+              top: 6px;
+              right: -30px;
+              width: 1px;
+              height: 15px;
+              background-color: #ddd;
+              content: '';
+            }
+
+            &:last-child {
+              &:after {
+                display: none;
+              }
+            }
+
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      li {
+        .footerDes {
+          font-size: 13px;
+          color: #666;
+        }
+      }
+
+      .footerInfo {
+        @extend %flex-start;
+      }
+    }
+
+    .footerRight {
+      width: 30%;
+
+      .footerIconWrap {
+        font-size: 30px;
+
+        a {
+          svg {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
