@@ -4,7 +4,7 @@
 
 footer {
   width: 100%;
-  height: 200px;
+  padding: 100px 0;
   background-color: #f8f8f8;
 
   .footerWrap {
@@ -14,47 +14,45 @@ footer {
     .footerLeft {
       width: 50%;
 
-      ul {
-        .footerNav {
-          .footerNavInner {
-            @extend %flex-spacebetween;
-            margin-bottom: 20px;
-            li {
-              position: relative;
+      .footerNav {
+        .footerNavInner {
+          @extend %flex-spacebetween;
+          margin-bottom: 20px;
+          li {
+            position: relative;
 
+            &:after {
+              position: absolute;
+              top: 6px;
+              right: -30px;
+              width: 1px;
+              height: 15px;
+              background-color: #ddd;
+              content: '';
+            }
+
+            &:last-child {
               &:after {
-                position: absolute;
-                top: 6px;
-                right: -30px;
-                width: 1px;
-                height: 15px;
-                background-color: #ddd;
-                content: '';
+                display: none;
               }
+            }
 
-              &:last-child {
-                &:after {
-                  display: none;
-                }
-              }
-
-              a {
-                font-size: 14px;
-              }
+            a {
+              font-size: 14px;
             }
           }
         }
+      }
 
-        li {
-          .footerDes {
-            font-size: 13px;
-            color: #666;
-          }
+      li {
+        .footerDes {
+          font-size: 13px;
+          color: #666;
         }
+      }
 
-        .footerInfo {
-          @extend %flex-start;
-        }
+      .footerInfo {
+        @extend %flex-start;
       }
     }
 
