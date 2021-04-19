@@ -5,7 +5,7 @@
   width: 180px;
 
   .underBar {
-    margin: 0 auto;
+    margin: 0 10px 15px 10px;
     height: 3px;
     background: black;
   }
@@ -40,6 +40,17 @@
         width: 150px;
         background-color: transparent;
       }
+    }
+  }
+
+  .catagoryList {
+    padding: 0 10px;
+    margin: 7.5px 0;
+    font-style: italic;
+
+    .catagoryBox {
+      margin-left: 10px;
+      font-style: normal;
     }
   }
 }

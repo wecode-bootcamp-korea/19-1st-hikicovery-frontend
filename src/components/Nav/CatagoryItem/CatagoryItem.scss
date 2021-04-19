@@ -1,6 +1,9 @@
-// .isView {
-//   display: none;
-// }
+.isView {
+  display: none;
+}
+.isNotView {
+  display: block;
+}
 .catagoryBox {
   display: flex;
   flex-direction: column;
