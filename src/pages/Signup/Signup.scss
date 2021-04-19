@@ -2,6 +2,13 @@
   ::placeholder {
     font-size: 13px;
   }
+
+  .underBar {
+    margin: 0 auto;
+    height: 3px;
+    background: black;
+  }
+
   .accountBanner {
     display: flex;
     justify-content: center;
@@ -12,47 +19,50 @@
       margin: 0 220px;
       width: 100%;
       max-width: 1280px;
+
       .bannerLinkPaths {
         display: flex;
         align-items: center;
         margin-top: 30px;
         margin-bottom: 14px;
       }
+
       .arrowIcon {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 20px;
       }
-      .underBar {
-        margin: 0 auto;
-        height: 3px;
-        background: black;
-      }
     }
   }
   .premiumWrapper {
     display: flex;
     justify-content: center;
+
     .premiumTitle,
     .premiumContent {
       width: 750px;
     }
+
     .premiumContent:last-child {
       color: black;
     }
+
     .premiumContent {
       color: #666;
       font-size: 13px;
       margin-bottom: 10px;
+
       .premiumContentBold {
         color: black;
         font-weight: 600;
       }
+
       .premiumArrow {
         margin: 0 5px;
       }
     }
+
     .premiumTitle {
       margin: 20px 0;
       font-size: 24px;
@@ -62,6 +72,7 @@
   .signUpForm {
     margin: 0 auto;
     width: 750px;
+    font-size: 14px;
 
     .signUpText {
       margin: 20px 0;
@@ -70,6 +81,7 @@
         margin-bottom: 10px;
       }
     }
+
     .nessaryIcon {
       color: red;
     }
@@ -83,35 +95,45 @@
       .signUpItem {
         width: 200px;
       }
+
       .signUpInput {
         width: 550px;
+
         .inputMargin {
           margin: 0 5px;
         }
+
         input {
           height: 40px;
           border: 1px solid #ddd;
           color: #999;
         }
+
         p {
           font-size: 13px;
           color: #999;
         }
+
         .inputId {
           width: 245px;
         }
+
         .inputPw {
         }
+
         .inputName {
           width: 152px;
         }
+
         .inputBirth {
           margin-right: 20px;
           width: 100px;
         }
+
         .inputEmail {
           width: 152px;
         }
+
         .inputPhone {
           width: 65px;
         }
@@ -122,7 +144,11 @@
         align-items: center;
       }
     }
+    .underBar.formUnder {
+      margin-top: 10px;
+    }
   }
+
   .buttonWrapper {
     display: flex;
     justify-content: center;
@@ -140,16 +166,34 @@
         height: 45px;
         border: 1px solid black;
       }
+
       .cancleButton {
         background-color: white;
       }
+
       .signUpButton {
         background-color: black;
         color: white;
       }
     }
   }
-  .premiumInfo {
+  .premiumInfoWrapper {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+
+    .premiumInfoBox {
+      margin-top: 20px;
+      padding: 20px 30px;
+      width: 750px;
+      background-color: #f8f8f8;
+      .premiumLawInfo {
+      }
+      .lawInfo {
+        margin-top: 10px;
+        color: #999;
+      }
+    }
   }
 }

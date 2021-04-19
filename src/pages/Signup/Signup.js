@@ -275,7 +275,9 @@ class Signup extends Component {
               />
             </div>
           </div>
+          <div className="underBar formUnder"></div>
         </form>
+
         <div className="buttonWrapper">
           <div className="buttonBox">
             <button className="cancleButton">취소</button>
@@ -284,19 +286,21 @@ class Signup extends Component {
             </button>
           </div>
         </div>
-        <div className="premiumInfo">
-          <strong>
-            F&F membership은 회원님의 소중한 개인정보를 안전하게 관리하고
-            있습니다.
-          </strong>
-          <p>
-            2017년 8월 18일 부터 시행되는 정보통신망 이용 촉진 및 정보보호 등에
-            관한 법률(이하 정보통신망법) 제 23조의 2 ‘주민등록번호의 사용
-            제한’에 따라 모든 서비스에서 주민등록번호를 입력 받지 않습니다. 이에
-            따라 가입하실 때는 주민등록번호를 입력하는 실명인증 대신 아이핀
-            인증이나 휴대폰, 신용카드, 공인인증서를 이용하여 본인인증 하셔야
-            합니다.
-          </p>
+        <div className="premiumInfoWrapper">
+          <div className="premiumInfoBox">
+            <strong className="premiumLawInfo">
+              F&F membership은 회원님의 소중한 개인정보를 안전하게 관리하고
+              있습니다.
+            </strong>
+            <p className="lawInfo">
+              2017년 8월 18일 부터 시행되는 정보통신망 이용 촉진 및 정보보호
+              등에 관한 법률(이하 정보통신망법) 제 23조의 2 ‘주민등록번호의 사용
+              제한’에 따라 모든 서비스에서 주민등록번호를 입력 받지 않습니다.
+              이에 따라 가입하실 때는 주민등록번호를 입력하는 실명인증 대신
+              아이핀 인증이나 휴대폰, 신용카드, 공인인증서를 이용하여 본인인증
+              하셔야 합니다.
+            </p>
+          </div>
         </div>
       </div>
     );
