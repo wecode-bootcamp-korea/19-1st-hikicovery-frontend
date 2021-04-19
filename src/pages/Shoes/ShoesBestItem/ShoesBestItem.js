@@ -10,13 +10,24 @@ class ShoesBestItem extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch('http://172.30.1.35:8000/products/display/majorview', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         shoesData: data.best_items,
+  //       });
+  //     });
+  // }
+
   componentDidMount() {
     fetch('/data/ShoesData.json')
       .then(json => json.json())
       .then(data => {
-        console.log(data);
         this.setState({
-          shoesData: data,
+          shoesData: data.shoes,
         });
       });
   }
@@ -25,19 +36,29 @@ class ShoesBestItem extends Component {
     return (
       <div className="BestItem">
         <h3>BEST ITEM</h3>
-        <ul className="shoesCardUl">
-          {shoesData.map(shoes => {
-            return (
-              <ShoesCard
-                key={shoes.id}
-                shoes_img={shoes.shoes_img}
-                shoes_name={shoes.shoes_name}
-                shoes_price={shoes.shoes_price}
-                shoes_size_list={shoes.shoes_size_list}
-              />
-            );
-          })}
-        </ul>
+        <div className="shoesCardBox">
+          <ul className="shoesCardUl">
+            {shoesData.map(shoes => {
+              return (
+                <ShoesCard
+                  key={shoes.id}
+                  shoes_img={shoes.shoes_img}
+                  shoes_img_hover={shoes.shoes_img_hover}
+                  shoes_name={shoes.shoes_name}
+                  shoes_price={shoes.shoes_price}
+                  shoes_size_list={shoes.shoes_size_list}
+                />
+                // <ShoesCard
+                //   key={shoes.id}
+                //   image={shoes.image}
+                //   name={shoes.name}
+                //   price={shoes.price}
+                //   product_stock={shoes.product_stock}
+                // />
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

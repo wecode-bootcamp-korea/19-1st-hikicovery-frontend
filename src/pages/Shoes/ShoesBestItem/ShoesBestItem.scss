@@ -6,18 +6,17 @@
   padding: 60px 0 120px 0;
 
   h3 {
-    font-size: 25px;
     margin-bottom: 10px;
+    font-size: 25px;
     font-family: $robotFont;
     font-style: italic;
     font-weight: bold;
   }
-
-  .shoesCardUl {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  .shoesCardBox {
+    overflow: hidden;
+    .shoesCardUl {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }

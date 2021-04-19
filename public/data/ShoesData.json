@@ -1,38 +1,207 @@
-[
-  {
+{
+  "shoes": [
+    {
+      "id": 1,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 2,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 3,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 4,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 5,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 6,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 7,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": "230", "stock": "1" },
+        { "size": "235", "stock": "1" },
+        { "size": "240", "stock": "1" },
+        { "size": "245", "stock": "1" },
+        { "size": "250", "stock": "1" },
+        { "size": "255", "stock": "1" },
+        { "size": "260", "stock": "1" },
+        { "size": "265", "stock": "1" },
+        { "size": "270", "stock": "1" }
+      ]
+    },
+    {
+      "id": 8,
+      "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
+      "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
+      "shoes_name": "버킷 디버커 웨어",
+      "shoes_price": "123,000 원",
+      "shoes_color": "red",
+      "shoes_size_list": [
+        { "size": 230, "stock": 1 },
+        { "size": 235, "stock": 1 },
+        { "size": 240, "stock": 1 },
+        { "size": 245, "stock": 1 },
+        { "size": 250, "stock": 1 },
+        { "size": 255, "stock": 1 },
+        { "size": 260, "stock": 1 },
+        { "size": 265, "stock": 1 },
+        { "size": 270, "stock": 1 }
+      ]
+    }
+  ],
+  "filter": {
     "id": 1,
-    "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
-    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
-    "shoes_name": "버킷 디버커 웨어",
-    "shoes_price": "123,000 원",
-    "shoes_color": "red",
-    "shoes_size_list": ["{230:10},{ 235:5}", "240", "245", "250", "255"]
-  },
-  {
-    "id": 2,
-    "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
-    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
-    "shoes_name": "버킷 디버커 웨어",
-    "shoes_price": "123,000 원",
-    "shoes_color": "red",
-    "shoes_size_list": ["230", "235", "240", "245", "250", "255"]
-  },
-  {
-    "id": 3,
-    "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
-    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
-    "shoes_name": "버킷 디버커 웨어",
-    "shoes_price": "123,000 원",
-    "shoes_color": "red",
-    "shoes_size_list": ["230", "235", "240", "245", "250", "255"]
-  },
-  {
-    "id": 4,
-    "shoes_img": "https://static.discovery-expedition.com/images/goods/detail/x/20200331/DXSHB4031-BE-1663444057674720.jpg/dims/resize/828x1104",
-    "shoes_img_hover": "https://image.msscdn.net/images/goods_img/20190221/960872/960872_3_500.jpg",
-    "shoes_name": "버킷 디버커 웨어",
-    "shoes_price": "123,000 원",
-    "shoes_color": "red",
-    "shoes_size_list": ["230", "235", "240", "245", "250", "255"]
+    "shoes_size_list": [
+      230,
+      235,
+      240,
+      245,
+      250,
+      255,
+      260,
+      265,
+      270,
+      275,
+      280,
+      285,
+      290,
+      295,
+      300
+    ],
+
+    "shoes_color": [
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "blue"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "black"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "multi"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "gray"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "red"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "pink"
+      },
+      {
+        "img_url": "https://static.discovery-expedition.com/images/goods/color/CRBK.png",
+        "color": "green"
+      }
+    ]
   }
-]
+}

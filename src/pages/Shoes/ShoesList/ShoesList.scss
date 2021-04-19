@@ -2,13 +2,13 @@
 .list {
   width: 80%;
   margin: 0 auto;
-  border-top: 2.5px solid #000;
   padding: 30px 0;
+  border-top: 2.5px solid #000;
 
   .filter {
-    padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 8px;
     align-items: center;
 
     .firstFilter {
@@ -23,13 +23,13 @@
           word-break: keep-all;
 
           ::after {
-            content: '';
             position: absolute;
             right: -21px;
             top: 4px;
             width: 1px;
             height: 12px;
             background: #ddd;
+            content: '';
           }
 
           a {
@@ -50,36 +50,33 @@
         position: relative;
         width: 120px;
         padding-right: 10px;
-        font-size: 14px;
         background: none;
+        font-size: 14px;
         cursor: pointer;
+        z-index: 99;
 
         ::after {
-          content: '';
           position: absolute;
           left: 5px;
           top: 6px;
           width: 10px;
           height: 12px;
           background: #ddd;
-          background: red;
+          content: '';
         }
 
         svg {
-          border: 0;
           position: absolute;
           top: 4px;
           right: 23px;
+          border: 0;
         }
       }
     }
   }
 
-  .shoesCardUl {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  .shoesCardListUl {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
   }
 }
