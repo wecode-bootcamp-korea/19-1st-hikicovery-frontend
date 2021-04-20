@@ -1,0 +1,56 @@
+.nav {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 180px;
+
+  .underBar {
+    margin: 0 10px 15px 10px;
+    height: 3px;
+    background: black;
+  }
+
+  .navImgBox {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    height: 34px;
+  }
+
+  .navSearchBox {
+    display: flex;
+    justify-content: center;
+    margin: 5px 10px;
+
+    .searchButton {
+      width: 30px;
+      background-color: transparent;
+    }
+
+    .disabledSearchButton {
+      display: none;
+    }
+
+    .searchInputBox {
+      display: flex;
+
+      .searchInput {
+        padding: 10px 10px;
+        height: 100%;
+        width: 150px;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .categoryList {
+    padding: 0 10px;
+    margin: 7.5px 0;
+    font-style: italic;
+
+    .categoryBox {
+      margin-left: 10px;
+      font-style: normal;
+    }
+  }
+}
