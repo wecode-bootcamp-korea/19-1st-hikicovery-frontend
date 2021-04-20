@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './FixMenuBar.scss';
 import { BsPersonFill, BsBagFill } from 'react-icons/bs';
 import { MdWatchLater } from 'react-icons/md';
+import './FixMenuBar.scss';
 
 class FixMenuBar extends Component {
   state = {
