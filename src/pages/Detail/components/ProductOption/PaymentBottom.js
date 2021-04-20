@@ -24,6 +24,7 @@ class PaymentBottom extends Component {
       liked: !liked,
     });
   };
+
   render() {
     const { liked, heartCount } = this.state;
     return (

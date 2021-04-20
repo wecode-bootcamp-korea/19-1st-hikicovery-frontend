@@ -1,8 +1,12 @@
 @import '../../../styles/Common.scss';
 
-.contentProductDetail {
-  display: flex;
-  justify-content: space-between;
+.productDetail {
   width: 1280px;
-  margin: 0 220px;
+  background-color: brown;
+  padding: 0 220px;
+
+  .contentProductDetail {
+    display: flex;
+    justify-content: space-between;
+  }
 }

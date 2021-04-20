@@ -1,15 +1,11 @@
 @import '../../styles/Common.scss';
 
 .wrap {
-  @extend %flex-center;
-  margin: 0 220px;
+  display: flex;
 
   nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 400px;
+    width: 220px;
+    height: 750px;
     background-color: #000;
     color: #fff;
     text-align: center;
@@ -17,10 +13,9 @@
   }
 
   .fixbar {
-    position: fixed;
-    top: 0;
+    position: absolute;
     right: 0;
-    width: 115px;
+    width: 220px;
     height: 200px;
     background-color: #000;
   }

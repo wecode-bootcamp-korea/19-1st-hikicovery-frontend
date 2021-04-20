@@ -31,8 +31,6 @@ class ProductDetail extends Component {
           product_stock: res.product_info[0].product_stock,
           color: res.product_info[0].color,
           product_info: res.product_info,
-          mainImage: res.product_info[0].image[0].image_url,
-          subImage: res.product_info[0].image[1].image_url,
           season: res.product_info[0].season,
         });
       });
@@ -115,7 +113,7 @@ class ProductDetail extends Component {
     } = this.state;
 
     return (
-      <div className="ProductDetail">
+      <div className="productDetail">
         <section className="contentProductDetail">
           <ProductContent
             reviewList={reviewList}
@@ -128,6 +126,7 @@ class ProductDetail extends Component {
             count={count}
             onIncreaseCount={this.onIncreaseCount}
             onDecreaseCount={this.onDecreaseCount}
+            handleClickColorList={this.handleClickColorList}
             color={color}
             soldOut={this.soldOut}
             product_stock={product_stock}
@@ -135,7 +134,6 @@ class ProductDetail extends Component {
             isSelect={isSelect}
             product_info={product_info}
             season={season}
-            // id={id}
           />
         </section>
       </div>

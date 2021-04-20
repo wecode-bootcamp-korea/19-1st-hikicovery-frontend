@@ -4,7 +4,6 @@ import './ProductReview.scss';
 
 class ProductReview extends Component {
   // updateSort = () => {
-  //   console.log('함수실행!');
   //   const { reviewList } = this.props;
   //   reviewList.filter(element => {
   //     return element.score.sort(function (a, b) {
@@ -30,35 +29,31 @@ class ProductReview extends Component {
     ],
   };
 
-  test = e => {
-    console.log(e.target.value);
-  };
-
   handleChange = event => {
-    this.setState({ value: event.target.value });
+    this.setState({ name: event.target.value });
   };
 
   handleReviewClick = e => {
     const { reviewList } = this.props;
     const { name } = this.state;
     if (name === '최근등록순') {
-      this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a - b;
-        }),
-      });
+      this.setState({});
     }
     if (name === '최고평점순') {
       this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a - b;
+        reviewList: reviewList.count.sort(function (a, b) {
+          if (a > b) return 1;
+          if (a === b) return 0;
+          if (a < b) return -1;
         }),
       });
     }
     if (name === '최저평점순') {
       this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a - b;
+        reviewList: reviewList.count.sort(function (a, b) {
+          if (a < b) return 1;
+          if (a === b) return 0;
+          if (a > b) return -1;
         }),
       });
     }
@@ -66,7 +61,7 @@ class ProductReview extends Component {
 
   render() {
     const { reviewList } = this.props;
-    const { options, value } = this.state;
+    const { options } = this.state;
     return (
       <div className="productReview">
         <div className="reviewWrap">
@@ -85,11 +80,10 @@ class ProductReview extends Component {
             <select
               name="최근등록순"
               onChange={this.handleChange}
-              value={value}
-              onClick={this.test}
+              onClick={this.handleReviewClick}
             >
               {options.map((item, index) => (
-                <option key={index} name={item.name} onClick={this.test}>
+                <option key={index} name={item.name}>
                   {item.name}
                 </option>
               ))}

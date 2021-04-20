@@ -12,7 +12,7 @@ class OptionSize extends Component {
           {product_stock.map(element => {
             return (
               <SizeList
-                // key={element.id}
+                key={element.id}
                 size={element.size}
                 stock={element.stock}
                 soldOut={soldOut}

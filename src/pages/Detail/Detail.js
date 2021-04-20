@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductDetail from './components/ProductDetail';
+import Footer from '../../components/Footer/Footer';
 import './Detail.scss';
 
 class Detail extends Component {
@@ -11,6 +12,7 @@ class Detail extends Component {
           <ProductDetail />
           <div className="fixbar">고정메뉴 자리</div>
         </div>
+        <Footer />
       </div>
     );
   }

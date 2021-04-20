@@ -5,17 +5,17 @@
   margin-top: 100px;
 
   .contentMenu {
-    width: 100%;
     @extend %flex-spacebetween;
+    width: 100%;
+    margin-bottom: 50px;
     border-top: 3px solid #000;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 50px;
 
     li {
+      padding: 20px 0;
       width: 33%;
       font-size: 16px;
       text-align: center;
-      padding: 20px 0;
 
       a {
         color: #999;
@@ -33,11 +33,10 @@
 
   .productTabmenu {
     width: 100%;
-    margin-bottom: 100px;
 
     h3 {
-      font-size: 22px;
       margin-bottom: 15px;
+      font-size: 22px;
     }
   }
 }

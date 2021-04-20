@@ -5,12 +5,7 @@ import './ProductContent.scss';
 
 class ProductContent extends Component {
   render() {
-    const {
-      reviewList,
-      handleClickScoreUp,
-      product_info,
-      handleClickScoreDown,
-    } = this.props;
+    const { reviewList, product_info } = this.props;
 
     return (
       product_info[0] !== undefined && (
@@ -36,10 +31,7 @@ class ProductContent extends Component {
               리뷰 작성시 온라인몰에서 사용 가능한 포인트를 적립해 드립니다.
               (텍스트 리뷰 300포인트, 포토리뷰 1,000 포인트)
             </p>
-            <ProductReview
-              handleClickScoreUp={handleClickScoreUp}
-              reviewList={reviewList}
-              handleClickScoreDown={handleClickScoreDown}
+            reviewList={reviewList}
             />
           </div>
           <div className="productTabmenu" id="tabmenu2">
