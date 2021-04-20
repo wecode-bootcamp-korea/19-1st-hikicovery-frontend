@@ -1,0 +1,33 @@
+.premiumContents {
+  display: flex;
+  justify-content: center;
+
+  .premiumTitle,
+  .premiumContent {
+    width: 750px;
+  }
+
+  .premiumContent:last-child {
+    color: black;
+  }
+
+  .premiumContent {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+
+    .premiumContentBold {
+      color: black;
+      font-weight: 600;
+    }
+
+    .premiumArrow {
+      margin: 0 5px;
+    }
+  }
+
+  .premiumTitle {
+    margin: 20px 0;
+    font-size: 24px;
+  }
+}

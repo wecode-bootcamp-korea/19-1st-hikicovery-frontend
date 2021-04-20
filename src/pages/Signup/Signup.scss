@@ -9,66 +9,6 @@
     background: black;
   }
 
-  .accountBanner {
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-    height: 148px;
-
-    .userFormBanner {
-      margin: 0 220px;
-      width: 100%;
-      max-width: 1280px;
-
-      .bannerLinkPaths {
-        display: flex;
-        align-items: center;
-        margin-top: 30px;
-        margin-bottom: 14px;
-      }
-
-      .arrowIcon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-      }
-    }
-  }
-  .premiumWrapper {
-    display: flex;
-    justify-content: center;
-
-    .premiumTitle,
-    .premiumContent {
-      width: 750px;
-    }
-
-    .premiumContent:last-child {
-      color: black;
-    }
-
-    .premiumContent {
-      color: #666;
-      font-size: 13px;
-      margin-bottom: 10px;
-
-      .premiumContentBold {
-        color: black;
-        font-weight: 600;
-      }
-
-      .premiumArrow {
-        margin: 0 5px;
-      }
-    }
-
-    .premiumTitle {
-      margin: 20px 0;
-      font-size: 24px;
-    }
-  }
-
   .signUpForm {
     margin: 0 auto;
     width: 750px;
@@ -118,9 +58,6 @@
           width: 245px;
         }
 
-        .inputPw {
-        }
-
         .inputName {
           width: 152px;
         }
@@ -165,6 +102,7 @@
         width: 220px;
         height: 45px;
         border: 1px solid black;
+        cursor: pointer;
       }
 
       .cancleButton {
@@ -188,8 +126,7 @@
       padding: 20px 30px;
       width: 750px;
       background-color: #f8f8f8;
-      .premiumLawInfo {
-      }
+
       .lawInfo {
         margin-top: 10px;
         color: #999;

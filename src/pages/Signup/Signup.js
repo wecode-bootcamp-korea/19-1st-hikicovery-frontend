@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import { withRouter } from 'react-router-dom';
+import AccountBanner from '../../components/AccountBanner/AccountBanner';
+import PremiumContents from './PremiumContents/PremiumContents';
 import './Signup.scss';
 
 class Signup extends Component {
@@ -46,7 +47,7 @@ class Signup extends Component {
     );
   };
 
-  goTo = () => {
+  singUpButton = () => {
     fetch('http://10.58.7.182:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
@@ -59,63 +60,15 @@ class Signup extends Component {
       }),
     })
       .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        if (res.token) {
-          localStorage.setItem('wtw-token', res.token);
-        }
-      });
+      .then(res => {});
   };
 
-  // componentDidMount() {
-  //   // const requestOption = {
-  //   //   method: 'POST',
-  //   //   Headers: { 'Content-Type': 'application/json' },
-  //   //   body: JSON.stringify({
-  //   //     account: this.state.account,
-  //   //     password: this.state.password,
-  //   //     name: this.state.name,
-  //   //     date: this.state.date,
-  //   //     phoneNum: this.state.phoneNum,
-  //   //     email: this.state.email,
-  //   //   }),
-  //   // };
-  // }
-
   render() {
-    console.log(this.state.date);
-    const { handleOnchange } = this;
+    const { handleOnchange, singUpButton } = this;
     return (
       <div className="signUp">
-        <div className="accountBanner">
-          <div className="userFormBanner">
-            <h2 className="bannerTitle">회원가입</h2>
-            <div className="bannerLinkPaths">
-              <Link to="">Home</Link>
-              <div className="arrowIcon">
-                <RiArrowRightSLine />
-              </div>
-              <Link to="">회원가입</Link>
-            </div>
-            <div className="underBar"></div>
-          </div>
-        </div>
-        <div className="premiumWrapper">
-          <div className="premiumBox">
-            <h3 className="premiumTitle">F&F 통합회원 가입</h3>
-            <p className="premiumContent">
-              Discovery Expedition의 회원이 되시면 하나의 동일한 ID와 비밀번호로
-              Discovery Expedition은 물론, F&F의 패밀리 브랜드의 통합회원으로
-              다양한 서비스를 안전하고 편리하게 이용하실 수 있습니다.
-            </p>
-            <p className="premiumContent">
-              <strong className="premiumContentBold">F&F Family Brand </strong>
-              <span className="premiumArrow">&gt;</span>Discovery Expedition,
-              MLB, MLB KIDS, COLLECTED
-            </p>
-          </div>
-        </div>
-
+        <AccountBanner />
+        <PremiumContents />
         <form className="signUpForm">
           <div className="signUpText">
             <h3>가입정보입력</h3>
@@ -277,8 +230,13 @@ class Signup extends Component {
 
         <div className="buttonWrapper">
           <div className="buttonBox">
-            <button className="cancleButton">취소</button>
-            <button className="signUpButton" onClick={this.goTo}>
+            <button
+              className="cancleButton"
+              onClick={() => this.props.history.push('/')}
+            >
+              취소
+            </button>
+            <button className="signUpButton" onClick={singUpButton}>
               확인
             </button>
           </div>
@@ -304,4 +262,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
