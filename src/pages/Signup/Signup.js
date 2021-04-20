@@ -37,8 +37,6 @@ class Signup extends Component {
       },
       () => {
         this.setState({
-          ...this.state.phoneNum,
-          ...this.state.date,
           phoneNum:
             form.phoneNum1 + '-' + form.phoneNum2 + '-' + form.phoneNum3,
           date: form.year + '-' + form.month + '-' + form.day,
@@ -48,27 +46,26 @@ class Signup extends Component {
     );
   };
 
-  // goTo = () => {
-  //   console.log(this.state.form);
-  //   fetch('http://10.58.56.241:8000/users/signup', {
-  //     method: 'POST',
-  //     Headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({
-  //       account: this.state.account,
-  //       password: this.state.password,
-  //       name: this.state.name,
-  //       date: this.state.date,
-  //       phoneNum: this.state.phoneNum,
-  //       email: this.state.email,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       if (res.token) {
-  //         localStorage.setItem('wtw-token', res.token);
-  //       }
-  //     });
-  // };
+  goTo = () => {
+    fetch('http://10.58.7.182:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        account: this.state.form.account,
+        password: this.state.form.password,
+        name: this.state.form.name,
+        birthday: this.state.date,
+        phone_number: this.state.phoneNum,
+        email: this.state.email,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        if (res.token) {
+          localStorage.setItem('wtw-token', res.token);
+        }
+      });
+  };
 
   // componentDidMount() {
   //   // const requestOption = {
@@ -281,7 +278,7 @@ class Signup extends Component {
         <div className="buttonWrapper">
           <div className="buttonBox">
             <button className="cancleButton">취소</button>
-            <button className="signUpButton" onClick={this.goTO}>
+            <button className="signUpButton" onClick={this.goTo}>
               확인
             </button>
           </div>
