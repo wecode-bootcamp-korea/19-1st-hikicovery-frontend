@@ -14,7 +14,7 @@ class PaymentBottom extends Component {
 
   onChangeCount = e => {
     this.setState({
-      heartCount: e.target.heartCount + 1,
+      heartCount: e.tarproduct_info.heartCount + 1,
     });
   };
 

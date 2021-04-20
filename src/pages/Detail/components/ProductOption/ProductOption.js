@@ -9,16 +9,16 @@ import './ProductOption.scss';
 class ProductOption extends Component {
   render() {
     const {
-      onDecrease,
-      onIncrease,
+      onDecreaseCount,
+      onIncreaseCount,
       count,
       handleClickColorList,
-      get,
+      product_info,
       isSelect,
     } = this.props;
     return (
       <div className="productOption">
-        {get.map(element => {
+        {product_info.map(element => {
           return (
             <PaymentTitle
               name={element.name}
@@ -28,13 +28,13 @@ class ProductOption extends Component {
           );
         })}
         <PaymentBenefit />
-        {get.map(element => {
+        {product_info.map(element => {
           return (
             <PaymentOption
               product_stock={element.product_stock}
               count={count}
-              onIncrease={onIncrease}
-              onDecrease={onDecrease}
+              onIncreaseCount={onIncreaseCount}
+              onDecreaseCount={onDecreaseCount}
               color={element.color}
               isSelect={isSelect}
               handleClickColorList={handleClickColorList}

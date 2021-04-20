@@ -3,11 +3,13 @@ import './ColorList.scss';
 
 class ColorList extends Component {
   render() {
-    const { image, handleClickColorList, id, select } = this.props;
+    const { image, handleClickColorList, id, isSelect } = this.props;
     return (
       <div className="colorList">
         <li
-          className={select ? 'paymentColorList selected' : 'paymentColorList'}
+          className={
+            isSelect === true ? 'paymentColorList selected' : 'paymentColorList'
+          }
           onClick={() => {
             handleClickColorList(id);
           }}

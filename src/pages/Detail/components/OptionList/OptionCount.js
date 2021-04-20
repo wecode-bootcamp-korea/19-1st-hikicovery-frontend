@@ -4,16 +4,16 @@ import './OptionCount.scss';
 
 class OptionCount extends Component {
   render() {
-    const { count, onDecrease, onIncrease } = this.props;
+    const { count, onDecreaseCount, onIncreaseCount } = this.props;
     return (
       <li className="optionCount">
         <p className="paymentOptionTitle">수량</p>
         <div className="countWrap">
-          <button className="down" onClick={onDecrease}>
+          <button className="down" onClick={onDecreaseCount}>
             <AiOutlineMinus />
           </button>
           <input type="button" value={count} />
-          <button className="up" onClick={onIncrease}>
+          <button className="up" onClick={onIncreaseCount}>
             <AiOutlinePlus />
           </button>
         </div>

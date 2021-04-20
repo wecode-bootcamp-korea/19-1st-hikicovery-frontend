@@ -4,6 +4,7 @@ import './ProductReview.scss';
 
 class ProductReview extends Component {
   // updateSort = () => {
+  //   console.log('함수실행!');
   //   const { reviewList } = this.props;
   //   reviewList.filter(element => {
   //     return element.score.sort(function (a, b) {
@@ -12,8 +13,60 @@ class ProductReview extends Component {
   //   });
   // };
 
+  state = {
+    options: [
+      {
+        name: '댓글보기',
+      },
+      {
+        name: '최근등록순',
+      },
+      {
+        name: '최고평점순',
+      },
+      {
+        name: '최저평점순',
+      },
+    ],
+  };
+
+  test = e => {
+    console.log(e.target.value);
+  };
+
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+  };
+
+  handleReviewClick = e => {
+    const { reviewList } = this.props;
+    const { name } = this.state;
+    if (name === '최근등록순') {
+      this.setState({
+        reviewList: reviewList.sort(function (a, b) {
+          return a - b;
+        }),
+      });
+    }
+    if (name === '최고평점순') {
+      this.setState({
+        reviewList: reviewList.sort(function (a, b) {
+          return a - b;
+        }),
+      });
+    }
+    if (name === '최저평점순') {
+      this.setState({
+        reviewList: reviewList.sort(function (a, b) {
+          return a - b;
+        }),
+      });
+    }
+  };
+
   render() {
-    const { reviewList, handleClickScoreUp } = this.props;
+    const { reviewList } = this.props;
+    const { options, value } = this.state;
     return (
       <div className="productReview">
         <div className="reviewWrap">
@@ -29,12 +82,17 @@ class ProductReview extends Component {
             </li>
           </ul>
           <div className="filter">
-            <select name="최근등록순">
-              <option value="HTML">최근등록순</option>
-              <option value="자바스크립트" onClick={handleClickScoreUp}>
-                최고평점순
-              </option>
-              <option value="CSS">최저평점순</option>
+            <select
+              name="최근등록순"
+              onChange={this.handleChange}
+              value={value}
+              onClick={this.test}
+            >
+              {options.map((item, index) => (
+                <option key={index} name={item.name} onClick={this.test}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
         </div>

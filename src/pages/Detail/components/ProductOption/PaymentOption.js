@@ -11,21 +11,23 @@ class PaymentOption extends Component {
       color,
       count,
       product_stock,
-      onIncrease,
-      onDecrease,
+      onIncreaseCount,
+      onDecreaseCount,
       handleClickColorList,
+      isSelect,
     } = this.props;
     return (
       <ul className="paymentOption">
         <OptionColor
           color={color}
           handleClickColorList={handleClickColorList}
+          isSelect={isSelect}
         />
-        <OptionSize product_stock={product_stock} />
+        <OptionSize product_stock={product_stock} isSelect={isSelect} />
         <OptionCount
           count={count}
-          onIncrease={onIncrease}
-          onDecrease={onDecrease}
+          onIncreaseCount={onIncreaseCount}
+          onDecreaseCount={onDecreaseCount}
         />
         <OptionDelivery />
       </ul>
