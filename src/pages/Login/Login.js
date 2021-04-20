@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import LoginForm from './LoginForm/LoginForm';
 import './Login.scss';
 
@@ -15,7 +16,23 @@ class Login extends Component {
     });
   };
 
-  chkLogin = () => {};
+  chkLogin = e => {
+    e.preventDefault();
+    const { inputId, inputPw } = this.state;
+    fetch('http://10.58.7.182:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        account: inputId,
+        password: inputPw,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message === 'SUCCESS') {
+          this.props.history.push('/');
+        }
+      });
+  };
 
   render() {
     const { inputOnChange, chkLogin } = this;
@@ -31,4 +48,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
