@@ -5,8 +5,10 @@ class ProductImage extends Component {
   render() {
     const { image } = this.props;
     return (
-      <div div className="productImage">
-        <img src={image} alt="제품사진" />
+      <div className="productImage">
+        {image.map(element => {
+          return <img src={element.image_url} alt="제품사진" />;
+        })}
       </div>
     );
   }

@@ -15,7 +15,6 @@ class ProductOption extends Component {
       handleClickColorList,
       get,
       isSelect,
-      season,
     } = this.props;
     return (
       <div className="productOption">
@@ -24,7 +23,7 @@ class ProductOption extends Component {
             <PaymentTitle
               name={element.name}
               price={element.price}
-              season={season}
+              season={element.season}
             />
           );
         })}

@@ -4,7 +4,7 @@ import './OptionColor.scss';
 
 class OptionColor extends Component {
   render() {
-    const { color, handleClickColorList, isSelected } = this.props;
+    const { color, handleClickColorList, isSelect } = this.props;
     return (
       <li className="optionColor">
         <div className="paymentOptionColorbox">
@@ -15,7 +15,7 @@ class OptionColor extends Component {
                 <ColorList
                   key={element.product_id}
                   image={element.product_image}
-                  isSelected={isSelected}
+                  isSelect={isSelect}
                   id={element.product_id}
                   handleClickColorList={handleClickColorList}
                 />

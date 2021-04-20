@@ -5,12 +5,13 @@ import './ProductContent.scss';
 
 class ProductContent extends Component {
   render() {
-    const { reviewList, get } = this.props;
+    const { reviewList, handleClickScoreUp, get } = this.props;
     return (
       <div className="productContent">
         {get.map(element => {
           return <ProductImage image={element.image} />;
         })}
+
         <ul className="contentMenu">
           <li className="active">
             <a href="#tabmenu1">상품 리뷰</a>
@@ -31,7 +32,10 @@ class ProductContent extends Component {
             리뷰 작성시 온라인몰에서 사용 가능한 포인트를 적립해 드립니다.
             (텍스트 리뷰 300포인트, 포토리뷰 1,000 포인트)
           </p>
-          <ProductReview reviewList={reviewList} />
+          <ProductReview
+            handleClickScoreUp={handleClickScoreUp}
+            reviewList={reviewList}
+          />
         </div>
         <div className="productTabmenu" id="tabmenu2">
           <h3>상품 고시정보</h3>

@@ -13,7 +13,7 @@ class ProductReview extends Component {
   // };
 
   render() {
-    const { reviewList } = this.props;
+    const { reviewList, handleClickScoreUp } = this.props;
     return (
       <div className="productReview">
         <div className="reviewWrap">
@@ -31,7 +31,9 @@ class ProductReview extends Component {
           <div className="filter">
             <select name="최근등록순">
               <option value="HTML">최근등록순</option>
-              <option value="자바스크립트">최고평점순</option>
+              <option value="자바스크립트" onClick={handleClickScoreUp}>
+                최고평점순
+              </option>
               <option value="CSS">최저평점순</option>
             </select>
           </div>

@@ -83,7 +83,8 @@
     "userId": "wecode",
     "color": "WHITE",
     "size": "240",
-    "date": "2021-04-14",
+    "date": "2021-02-02",
+    "isPhoto": true,
     "text": "생각한 제품이랑 거의 동일하네요 화면이랑 비슷해요!",
     "sizetext": "딱 맞아요",
     "colortext": "색상과 같아요",
@@ -96,7 +97,7 @@
     "userId": "wecode",
     "color": "WHITE",
     "size": "240",
-    "date": "2021-04-14",
+    "date": "2021-02-10",
     "text": "생각한 제품이랑 거의 동일하네요 화면이랑 비슷해요!",
     "sizetext": "딱 맞아요",
     "colortext": "색상과 같아요",
@@ -105,7 +106,7 @@
   },
   {
     "id": 9,
-    "score": 5,
+    "score": 4,
     "userId": "wecode",
     "color": "WHITE",
     "size": "240",
@@ -118,7 +119,7 @@
   },
   {
     "id": 10,
-    "score": 5,
+    "score": 1,
     "userId": "wecode",
     "color": "WHITE",
     "size": "240",
@@ -126,7 +127,7 @@
     "text": "생각한 제품이랑 거의 동일하네요 화면이랑 비슷해요!",
     "sizetext": "딱 맞아요",
     "colortext": "색상과 같아요",
-    "image": "https://static.discovery-expedition.com/images/goods/review/20210414/44668606482151732.jpg",
+    "image": "https://static.discovery-expedition.com/images/goods/review/20210414/446686064821517",
     "isLiked": true
   }
 ]

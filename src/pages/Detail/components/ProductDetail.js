@@ -17,14 +17,11 @@ class ProductDetail extends Component {
       reviewList: [],
       isSelect: false,
       season: [],
-      color_img: '',
     };
   }
 
   handleClickColorList = idx => {
-    // const newArr = Array(this.state.isSelected.length).fill(false);
-    // newArr[idx] = true;
-    fetch(`http://10.58.1.213:8000/products/goods/${idx}`, {
+    fetch(`http://10.58.5.151:8000/products/${idx}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -71,10 +68,38 @@ class ProductDetail extends Component {
     }
   };
 
+  handleClickUpdateDate = () => {
+    const { reviewList } = this.state;
+    this.setState({
+      reviewList: reviewList.sort(function (a, b) {
+        return a - b;
+      }),
+    });
+  };
+
+  handleClickAll = () => {
+    const { reviewList } = this.state;
+    this.setState({
+      reviewList: reviewList.sort(function (a, b) {
+        return a - b;
+      }),
+    });
+  };
+
+  handleClickScoreUp = () => {
+    console.log('카운트 업');
+    const { reviewList } = this.state;
+    this.setState({
+      reviewList: reviewList.sort(function (a, b) {
+        return a - b;
+      }),
+    });
+  };
+
   //fetch(`http://172.30.1.35:8000/products/goods/${this.state.id}`
 
-  componentDidMount() {
-    fetch('http://10.58.1.213:8000/products/goods/1', {
+  componentDidMount = idx => {
+    fetch('http://10.58.5.151:8000/products/5', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -82,15 +107,13 @@ class ProductDetail extends Component {
         this.setState({
           name: res.product_info[0].name,
           price: res.product_info[0].price,
-          image: res.product_info[0].image[0].image_url,
+          image: res.product_info[0].image,
           product_stock: res.product_info[0].product_stock,
-          color_img: res.product_info[0].color[0].product_image,
           color: res.product_info[0].color,
           isSelect: res.product_info,
           get: res.product_info,
           season: [res.product_info[0].season],
         });
-        console.log(res.product_info[0].color[0].product_image);
       });
 
     // fetch('/data/DetailColordata.json')
@@ -114,9 +137,10 @@ class ProductDetail extends Component {
       .then(data => {
         this.setState({
           reviewList: data,
+          reviewdate: data.date,
         });
       });
-  }
+  };
 
   render() {
     const {
@@ -130,12 +154,16 @@ class ProductDetail extends Component {
       image,
       isSelect,
       season,
-      color_img,
     } = this.state;
     return (
       <div className="ProductDetail">
         <section className="contentProductDetail">
-          <ProductContent get={get} image={image} reviewList={reviewList} />
+          <ProductContent
+            get={get}
+            image={image}
+            reviewList={reviewList}
+            handleClickScoreUp={this.handleClickScoreUp}
+          />
           <ProductOption
             name={name}
             price={price}
@@ -146,11 +174,10 @@ class ProductDetail extends Component {
             soldOut={this.soldOut}
             product_stock={product_stock}
             reviewList={reviewList}
-            isSelected={isSelect}
+            isSelect={isSelect}
             handleClickColorList={this.handleClickColorList}
             get={get}
             season={season}
-            color_img={color_img}
             // id={id}
           />
         </section>
