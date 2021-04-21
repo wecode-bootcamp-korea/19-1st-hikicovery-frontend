@@ -1,0 +1,15 @@
+@import '../../../styles/Common.scss';
+
+.paginateUl {
+  display: flex;
+  width: 270px;
+  margin: 30px auto;
+
+  .prevArrow,
+  .nextArrow {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #000;
+  }
+}

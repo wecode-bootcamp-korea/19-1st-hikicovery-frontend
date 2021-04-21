@@ -6,7 +6,7 @@ class CategoryTitle extends Component {
     return (
       <div className="CategoryTitle">
         {data.map(input => (
-          <h2>{input.text}</h2>
+          <h2 key={input.id}>{input.text}</h2>
         ))}
       </div>
     );

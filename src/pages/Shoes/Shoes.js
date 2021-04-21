@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ShoesTop from './ShoesTop/ShoesTop';
 import ShoesBestItem from './ShoesBestItem/ShoesBestItem';
 import ShoesList from './ShoesList/ShoesList';
-import ShoesKategorie from './ShoesKategorie/ShoesCategory';
+// import ShoesCategory from './ShoesCategory/ShoesCategory';
 import './Shoes.scss';
 
 class Shoes extends Component {
@@ -13,7 +13,7 @@ class Shoes extends Component {
         <ShoesTop />
         <ShoesBestItem />
         <ShoesList />
-        <ShoesKategorie />
+        {/* <ShoesCategory /> */}
       </div>
     );
   }

@@ -1,26 +1,32 @@
 @import '../../../styles/Common.scss';
 
 .shoesCardLi {
-  background-color: #fff;
+  width: 294.5px;
   border: 0.5px solid #ddd;
 
   &:hover {
-    position: absolute;
     border: 0.5px solid #000;
+    z-index: 100;
   }
 
   .defaultImg {
-    width: 286px;
-    height: 325px;
+    width: 295px;
+    height: 310px;
   }
+
   .hoverImg {
-    width: 286px;
+    width: 295px;
     height: 310px;
   }
 
   .bestItemInfo {
-    font-size: 13px;
+    position: absolute;
+    width: 295px;
+    padding-top: 10px;
+    font-size: 15px;
     text-align: center;
+    background-color: #fff;
+    border: 0.5px solid #000;
 
     .txtSize {
       display: flex;

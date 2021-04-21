@@ -68,7 +68,7 @@ export default class ShoesListButton extends Component {
             <div className="colorClick">
               {shoesColor.map(shoesColor => {
                 return (
-                  <div className="buttonImgTxt">
+                  <div className="buttonImgTxt" key={shoesColor.id}>
                     <img
                       className={
                         this.state.selectedColor

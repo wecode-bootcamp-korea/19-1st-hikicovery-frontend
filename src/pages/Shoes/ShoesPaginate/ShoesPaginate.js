@@ -1,48 +1,107 @@
 import React, { Component } from 'react';
-import ShoesList from '../ShoesList.';
+import { withRouter } from 'react-router-dom';
+import { FaAngleDoubleLeft } from 'react-icons/fa';
+import { FaAngleDoubleRight } from 'react-icons/fa';
+import ShoesPaginateNum from './ShoesPaginateNum';
+import './ShoesPaginate.scss';
 
-export default class ShoesPaginate extends Component {
-  state = {
-    drink: [],
-    userInput: '',
-    currentIdx: 1,
+const SHOW = 10;
+
+class ShoesPaginate extends Component {
+  constructor() {
+    super();
+    this.state = {
+      PageNo: 1,
+    };
+  }
+
+  componentDidMount() {
+    this.getProductData();
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(this.props.location.search);
+  //   const query = this.props.locaiton.search;
+  //   // if (prevProps !== this.props) {
+  //   //   this.getProductData();
+  //   // }
+  // }
+
+  getProductData = () => {
+    const { PageNo } = this.state;
+    fetch(`http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=${SHOW}`);
   };
 
-  fetchDrink = e => {
-    const LIMIT = 10;
-    // 한 페이지에 보여줄 데이터 갯수를 10개로 설정하기 위해 Limit 10으로 설정
-    const offset = e?.target.dataset.idx;
-    //각 페이지 버튼의 data-idx를 offset으로 설정
+  clickLeft = () => {
+    const { PageNo } = this.state;
+    let nextPageNum = PageNo;
 
-    fetch(
-      `http://10.58.2.83:8000/drinks?limit=${LIMIT}&offset=${offset * LIMIT}`
-      // fetch 요청이 들어올 때마다 위에서 설정했던 (페이지 버튼의 번호수 -1) * LIMIT의 데이터부터
-      // LIMIT 갯수 만큼 데이터가 출력된다.
-      // 즉 1페이지라면 0 ~ 10 개, 2페이지라면 10 ~ 20 개가 출력됩니다.
-    )
-      .then(res => res.json())
-      // 받은 데이터를 js에서 필요로 하는 데이터를 가져온다.
-      // HttpResponse가 아닌 JsonResponse로 백엔드에서 전달해준다면 해당 데이터를 받을 수 있지만
-      // HttpResponse로 온다면 오류가 납니다!
-      .then(res => this.setState({ drink: res }));
-    // 위에서 받은 데이터를 this.state.drink 저장합니다.
+    if (PageNo > 1) {
+      nextPageNum--;
+      this.setState({ PageNo: nextPageNum });
+    }
+    this.props.history.push(
+      `/shoes?PageNo=${Number(nextPageNum)}&Show=${SHOW}`
+    );
   };
+
+  clickRight = () => {
+    const { PageNo } = this.state;
+    let nextPageNum = PageNo + 1;
+
+    if (nextPageNum > 1) {
+      this.setState({ PageNo: nextPageNum });
+      this.props.history.push(
+        `/shoes?PageNo=${Number(nextPageNum)}&Show=${SHOW}`
+      );
+    }
+  };
+
+  arrowNext = () => {};
 
   render() {
-    const { drink, currentIdx } = this.state;
-    const { fetchDrink } = this;
-    // 비구조 할당
-
+    const { clickLeft, clickRight } = this;
     return (
       <div className="ShoesPaginate">
-        <h1>Mini Project - Pagination</h1>
-        {
-          /* <Buttons currentIdx={currentIdx} fetchDrink={fetchDrink} />
-        // 5가지의 data-idx 0~4 까지의 버튼 */
-          <ShoesList drink={drink} />
-        }
-        // 데이터별로 Map을 돌려 상품들을 출력하게 해놓았다.
+        <ul className="paginateUl">
+          <li className="prevArrow">
+            <FaAngleDoubleLeft onClick={clickLeft} />
+          </li>
+          {Numbers.map((el, index) => (
+            <ShoesPaginateNum
+              key={index}
+              num={el.number}
+              onClick={this.arrowNext}
+            />
+          ))}
+          <li className="nextArrow">
+            <FaAngleDoubleRight onClick={clickRight} />
+          </li>
+        </ul>
       </div>
     );
   }
 }
+
+const Numbers = [
+  {
+    number: 1,
+  },
+  {
+    number: 2,
+  },
+  {
+    number: 3,
+  },
+  {
+    number: 4,
+  },
+  {
+    number: 5,
+  },
+  {
+    number: 6,
+  },
+];
+
+export default withRouter(ShoesPaginate);

@@ -1,7 +1,7 @@
 @import '../../../styles/Common.scss';
 
 .BestItem {
-  width: 80%;
+  width: 1180px;
   margin: 0 auto;
   padding: 60px 0 120px 0;
 
@@ -16,7 +16,6 @@
     overflow: hidden;
     .shoesCardUl {
       display: flex;
-      justify-content: space-between;
     }
   }
 }
