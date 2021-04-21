@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { GET_PRODUCT_API } from '../config/config';
 import ProductContent from './ProductContent/ProductContent';
 import ProductOption from './ProductOption/ProductOption';
 import './ProductDetail.scss';
@@ -9,11 +10,11 @@ class ProductDetail extends Component {
     this.state = {
       name: '',
       price: 0,
-      product_stock: [],
+      productStock: [],
       image: [],
       color: [],
       count: 1,
-      product_info: [],
+      productInfo: [],
       reviewList: [],
       isSelect: false,
       season: [],
@@ -21,16 +22,16 @@ class ProductDetail extends Component {
   }
 
   componentDidMount = idx => {
-    fetch('http://10.58.1.224:8000/products/5')
+    fetch(`${GET_PRODUCT_API}/5`)
       .then(res => res.json())
       .then(res => {
         this.setState({
           name: res.product_info[0].name,
           price: res.product_info[0].price,
           image: res.product_info[0].image,
-          product_stock: res.product_info[0].product_stock,
+          productStock: res.product_info[0].product_stock,
           color: res.product_info[0].color,
-          product_info: res.product_info,
+          productInfo: res.product_info,
           season: res.product_info[0].season,
         });
       });
@@ -54,7 +55,7 @@ class ProductDetail extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          product_info: res.product_info,
+          productInfo: res.product_info,
         });
       });
   };
@@ -89,11 +90,7 @@ class ProductDetail extends Component {
     const { stock } = this.state;
     if (stock === 0) {
       this.setState({
-        soldOut: true,
-      });
-    } else {
-      this.setState({
-        soldOut: false,
+        soldOut: stock === 0,
       });
     }
   };
@@ -103,10 +100,10 @@ class ProductDetail extends Component {
       name,
       price,
       color,
-      product_stock,
+      productStock,
       count,
       reviewList,
-      product_info,
+      productInfo,
       image,
       isSelect,
       season,
@@ -118,7 +115,7 @@ class ProductDetail extends Component {
           <ProductContent
             reviewList={reviewList}
             image={image}
-            product_info={product_info}
+            productInfo={productInfo}
           />
           <ProductOption
             name={name}
@@ -129,10 +126,10 @@ class ProductDetail extends Component {
             handleClickColorList={this.handleClickColorList}
             color={color}
             soldOut={this.soldOut}
-            product_stock={product_stock}
+            productStock={productStock}
             reviewList={reviewList}
             isSelect={isSelect}
-            product_info={product_info}
+            productInfo={productInfo}
             season={season}
           />
         </section>

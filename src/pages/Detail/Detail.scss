@@ -2,21 +2,4 @@
 
 .wrap {
   display: flex;
-
-  nav {
-    width: 220px;
-    height: 750px;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    z-index: 10;
-  }
-
-  .fixbar {
-    position: absolute;
-    right: 0;
-    width: 220px;
-    height: 200px;
-    background-color: #000;
-  }
 }

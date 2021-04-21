@@ -5,12 +5,12 @@ import './ProductContent.scss';
 
 class ProductContent extends Component {
   render() {
-    const { reviewList, product_info } = this.props;
+    const { reviewList, productInfo } = this.props;
 
     return (
-      product_info[0] !== undefined && (
+      productInfo[0] !== undefined && (
         <div className="productContent">
-          <ProductImage image={product_info[0].image} />
+          <ProductImage image={productInfo[0].image} />
           <ul className="contentMenu">
             <li className="active">
               <a href="#tabmenu1">상품 리뷰</a>

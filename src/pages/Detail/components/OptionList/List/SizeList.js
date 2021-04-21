@@ -7,7 +7,9 @@ class SizeList extends Component {
     return (
       <li className="sizeList">
         <button
-          className={isSelect ? '' : 'selected' && stock === 0 ? 'soldOut' : ''}
+          className={`${isSelect ? 'selected' : ''} ${
+            stock === 0 ? 'soldOut' : ''
+          }`}
           onClick={this.selectSizeBtn}
         >
           {size}

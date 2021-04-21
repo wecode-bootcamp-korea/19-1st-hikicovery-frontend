@@ -12,25 +12,25 @@ class ProductOption extends Component {
       onDecreaseCount,
       onIncreaseCount,
       handleClickColorList,
-      product_info,
+      productInfo,
       isSelect,
       count,
     } = this.props;
     return (
-      product_info[0] !== undefined && (
+      productInfo[0] !== undefined && (
         <div className="productOption">
           <PaymentTitle
-            name={product_info[0].name}
-            price={product_info[0].price}
-            season={product_info[0].season}
+            name={productInfo[0].name}
+            price={productInfo[0].price}
+            season={productInfo[0].season}
           />
           <PaymentBenefit />
           <PaymentOption
-            product_stock={product_info[0].product_stock}
+            productStock={productInfo[0].product_stock}
             count={count}
             onIncreaseCount={onIncreaseCount}
             onDecreaseCount={onDecreaseCount}
-            color={product_info[0].color}
+            color={productInfo[0].color}
             isSelect={isSelect}
             handleClickColorList={handleClickColorList}
           />

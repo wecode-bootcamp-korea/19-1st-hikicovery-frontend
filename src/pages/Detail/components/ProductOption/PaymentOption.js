@@ -10,7 +10,7 @@ class PaymentOption extends Component {
     const {
       color,
       count,
-      product_stock,
+      productStock,
       onIncreaseCount,
       onDecreaseCount,
       handleClickColorList,
@@ -23,7 +23,7 @@ class PaymentOption extends Component {
           handleClickColorList={handleClickColorList}
           isSelect={isSelect}
         />
-        <OptionSize product_stock={product_stock} isSelect={isSelect} />
+        <OptionSize productStock={productStock} isSelect={isSelect} />
         <OptionCount
           count={count}
           onIncreaseCount={onIncreaseCount}
