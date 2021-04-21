@@ -20,43 +20,46 @@ class Signup extends Component {
       phoneNum2: '',
       phoneNum3: '',
     },
-    phoneNum: '',
-    date: '',
-    email: '',
   };
 
   handleOnchange = e => {
     const { name, value } = e.target;
-    const { form } = this.state;
-    this.setState(
-      {
-        ...this.state,
-        form: {
-          ...this.state.form,
-          [name]: value,
-        },
+    this.setState({
+      ...this.state,
+      form: {
+        ...this.state.form,
+        [name]: value,
       },
-      () => {
-        this.setState({
-          phoneNum:
-            form.phoneNum1 + '-' + form.phoneNum2 + '-' + form.phoneNum3,
-          date: form.year + '-' + form.month + '-' + form.day,
-          email: form.email + '@' + form.emailDot,
-        });
-      }
-    );
+    });
   };
 
   singUpButton = () => {
+    const {
+      account,
+      password,
+      name,
+      phoneNum1,
+      phoneNum2,
+      phoneNum3,
+      year,
+      month,
+      day,
+      email,
+      emailDot,
+    } = this.state.form;
+    const date = year + '-' + month + '-' + day;
+    const phoneNum = phoneNum1 + '-' + phoneNum2 + '-' + phoneNum3;
+    const emailMix = email + '@' + emailDot;
+
     fetch('http://10.58.7.182:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        account: this.state.form.account,
-        password: this.state.form.password,
-        name: this.state.form.name,
-        birthday: this.state.date,
-        phone_number: this.state.phoneNum,
-        email: this.state.email,
+        account: account,
+        password: password,
+        name: name,
+        birthday: date,
+        phone_number: phoneNum,
+        email: emailMix,
       }),
     })
       .then(res => res.json())
@@ -86,7 +89,7 @@ class Signup extends Component {
                 type="text"
                 name="account"
                 className="inputId"
-                onChange={this.handleOnchange}
+                onChange={handleOnchange}
               />
               <p>
                 아이디는 6~15자의 영문 소문자와 숫자만 사용 가능하며 특수문자는
