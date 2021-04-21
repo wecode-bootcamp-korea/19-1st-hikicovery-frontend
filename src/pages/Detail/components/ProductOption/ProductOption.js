@@ -11,39 +11,33 @@ class ProductOption extends Component {
     const {
       onDecreaseCount,
       onIncreaseCount,
-      count,
       handleClickColorList,
       product_info,
       isSelect,
+      count,
     } = this.props;
     return (
-      <div className="productOption">
-        {product_info.map(element => {
-          return (
-            <PaymentTitle
-              name={element.name}
-              price={element.price}
-              season={element.season}
-            />
-          );
-        })}
-        <PaymentBenefit />
-        {product_info.map(element => {
-          return (
-            <PaymentOption
-              product_stock={element.product_stock}
-              count={count}
-              onIncreaseCount={onIncreaseCount}
-              onDecreaseCount={onDecreaseCount}
-              color={element.color}
-              isSelect={isSelect}
-              handleClickColorList={handleClickColorList}
-            />
-          );
-        })}
-        <PaymentButton />
-        <PaymentBottom />
-      </div>
+      product_info[0] !== undefined && (
+        <div className="productOption">
+          <PaymentTitle
+            name={product_info[0].name}
+            price={product_info[0].price}
+            season={product_info[0].season}
+          />
+          <PaymentBenefit />
+          <PaymentOption
+            product_stock={product_info[0].product_stock}
+            count={count}
+            onIncreaseCount={onIncreaseCount}
+            onDecreaseCount={onDecreaseCount}
+            color={product_info[0].color}
+            isSelect={isSelect}
+            handleClickColorList={handleClickColorList}
+          />
+          <PaymentButton />
+          <PaymentBottom />
+        </div>
+      )
     );
   }
 }

@@ -21,7 +21,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount = idx => {
-    fetch('http://10.58.5.151:8000/products/5')
+    fetch('http://10.58.1.224:8000/products/5')
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -50,7 +50,7 @@ class ProductDetail extends Component {
   handleClickColorList = idx => {
     const newArr = Array(this.state.color).fill(false);
     newArr[idx] = true;
-    fetch(`http://10.58.5.151:8000/products/${idx}`)
+    fetch(`http://10.58.1.224:8000/products/${idx}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -59,7 +59,7 @@ class ProductDetail extends Component {
       });
   };
 
-  onIncreaseCountCount = () => {
+  onIncreaseCount = () => {
     const { count } = this.state;
 
     if (count === 8) {
@@ -72,10 +72,10 @@ class ProductDetail extends Component {
     });
   };
 
-  onDecreaseCountCount = () => {
+  onDecreaseCount = () => {
     const { count } = this.state;
 
-    if (count === 0) {
+    if (count === 1) {
       alert('주문 최소 가능 수량은 1입니다.');
       return;
     }
