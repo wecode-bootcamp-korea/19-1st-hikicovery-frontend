@@ -37,23 +37,25 @@ class ProductReview extends Component {
     const { reviewList } = this.props;
     const { name } = this.state;
     if (name === '최근등록순') {
-      this.setState({});
-    }
-    if (name === '최고평점순') {
       this.setState({
-        reviewList: reviewList.count.sort(function (a, b) {
-          if (a > b) return 1;
-          if (a === b) return 0;
-          if (a < b) return -1;
+        reviewList: reviewList.sort(function (a, b) {
+          return a.date - b.date;
         }),
       });
     }
+
+    if (name === '최고평점순') {
+      this.setState({
+        reviewList: reviewList.sort(function (a, b) {
+          return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
+        }),
+      });
+    }
+
     if (name === '최저평점순') {
       this.setState({
-        reviewList: reviewList.count.sort(function (a, b) {
-          if (a < b) return 1;
-          if (a === b) return 0;
-          if (a > b) return -1;
+        reviewList: reviewList.sort(function (a, b) {
+          return a.score > b.score ? -1 : a.score < b.score ? 1 : 0;
         }),
       });
     }
