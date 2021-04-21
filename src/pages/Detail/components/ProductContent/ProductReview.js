@@ -16,24 +16,30 @@ class ProductReview extends Component {
     options: [
       {
         name: '댓글보기',
+        value: null,
       },
       {
         name: '최근등록순',
+        value: '최근등록순',
       },
       {
         name: '최고평점순',
+        value: '최고평점순',
       },
       {
         name: '최저평점순',
+        value: '최저평점순',
       },
     ],
   };
 
   handleChange = event => {
     this.setState({ name: event.target.value });
+    console.log(event.target.name);
   };
 
   handleReviewClick = e => {
+    console.log('함수실행!');
     const { reviewList } = this.props;
     const { name } = this.state;
     if (name === '최근등록순') {
@@ -42,17 +48,13 @@ class ProductReview extends Component {
           return a.date - b.date;
         }),
       });
-    }
-
-    if (name === '최고평점순') {
+    } else if (name === '최고평점순') {
       this.setState({
         reviewList: reviewList.sort(function (a, b) {
           return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
         }),
       });
-    }
-
-    if (name === '최저평점순') {
+    } else if (name === '최저평점순') {
       this.setState({
         reviewList: reviewList.sort(function (a, b) {
           return a.score > b.score ? -1 : a.score < b.score ? 1 : 0;

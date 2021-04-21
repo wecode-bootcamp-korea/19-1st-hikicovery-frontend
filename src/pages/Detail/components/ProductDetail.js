@@ -22,7 +22,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount = idx => {
-    fetch(`${GET_PRODUCT_API}/5`)
+    fetch(`${GET_PRODUCT_API}/7`)
       .then(res => res.json())
       .then(res => {
         this.setState({
