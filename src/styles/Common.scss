@@ -26,4 +26,9 @@ $robotFont: 'Roboto', sans-serif;
   align-items: center;
 }
 
+%flex-jutify-center {
+  display: flex;
+  justify-content: center;
+}
+
 $lightgray: 1px solid #ddd;
