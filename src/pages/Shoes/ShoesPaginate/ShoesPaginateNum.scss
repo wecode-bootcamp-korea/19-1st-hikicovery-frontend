@@ -1,8 +1,9 @@
 @import '../../../styles/Common.scss';
 
 .paginateNumLi {
+  text-align: center;
   width: 30px;
   height: 30px;
-  text-align: center;
+  cursor: pointer;
   border: 1px solid #000;
 }

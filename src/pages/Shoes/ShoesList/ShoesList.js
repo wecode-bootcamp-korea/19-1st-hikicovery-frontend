@@ -35,7 +35,6 @@ class ShoesList extends Component {
         this.setState({
           shoesData: data.product_list,
         });
-        console.log(data);
       });
   }
 

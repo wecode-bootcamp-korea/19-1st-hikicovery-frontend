@@ -19,7 +19,6 @@ class ShoesBestItem extends Component {
         this.setState({
           shoesData: data.best_items,
         });
-        console.log(data);
       });
   }
 

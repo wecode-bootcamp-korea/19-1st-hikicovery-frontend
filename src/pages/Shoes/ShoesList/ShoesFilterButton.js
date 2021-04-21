@@ -24,7 +24,6 @@ export default class ShoesListButton extends Component {
   }
 
   handleSelectedSize = size => {
-    console.log('selected >>>> ', size);
     this.setState(
       {
         selectedSize: [...this.state.selectedSize, size],
@@ -34,7 +33,6 @@ export default class ShoesListButton extends Component {
   };
 
   handleSelectedColor = color => {
-    console.log('selected >>>> ', color);
     this.setState({
       selectedColor: [...this.state.selectedColor, color],
     });
@@ -89,6 +87,16 @@ export default class ShoesListButton extends Component {
 
           <div className="buttonPrice">
             <h3>가격</h3>
+            <div className="priceClick">
+              <input
+                type="range"
+                id="volume"
+                name="volume"
+                min="0"
+                max="300"
+                step="5"
+              ></input>
+            </div>
           </div>
 
           <div className="buttons">

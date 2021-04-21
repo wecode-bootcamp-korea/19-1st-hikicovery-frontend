@@ -5,13 +5,14 @@ import { FaAngleDoubleRight } from 'react-icons/fa';
 import ShoesPaginateNum from './ShoesPaginateNum';
 import './ShoesPaginate.scss';
 
-const SHOW = 10;
+const SHOW = 12;
 
 class ShoesPaginate extends Component {
   constructor() {
     super();
     this.state = {
       PageNo: 1,
+      PageNoMax: 1,
     };
   }
 
@@ -25,11 +26,17 @@ class ShoesPaginate extends Component {
   //   // if (prevProps !== this.props) {
   //   //   this.getProductData();
   //   // }
-  // }
+  //
 
   getProductData = () => {
     const { PageNo } = this.state;
-    fetch(`http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=${SHOW}`);
+    fetch(`http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=${SHOW}`)
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          PageNoMax: data.max_page,
+        })
+      );
   };
 
   clickLeft = () => {
@@ -57,9 +64,26 @@ class ShoesPaginate extends Component {
     }
   };
 
-  arrowNext = () => {};
+  fetchShoes = number => {
+    this.setState({ PageNo: number });
+    this.props.history.push(`/shoes?PageNo=${number}&Show=${SHOW}`);
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.location.search !== this.props.location.search) {
+      fetch(`http://10.58.1.224:8000/products${this.props.location.search}`)
+        .then(res => res.json())
+        .then(data =>
+          this.setState({
+            PageNoMax: data.max_page,
+          })
+        );
+    }
+  }
 
   render() {
+    const PageNoNum = [...Array(Number(this.state.PageNoMax)).keys()];
+
     const { clickLeft, clickRight } = this;
     return (
       <div className="ShoesPaginate">
@@ -67,11 +91,11 @@ class ShoesPaginate extends Component {
           <li className="prevArrow">
             <FaAngleDoubleLeft onClick={clickLeft} />
           </li>
-          {Numbers.map((el, index) => (
+          {PageNoNum.map((num, index) => (
             <ShoesPaginateNum
               key={index}
-              num={el.number}
-              onClick={this.arrowNext}
+              num={num + 1}
+              fetchShoes={this.fetchShoes}
             />
           ))}
           <li className="nextArrow">
@@ -82,26 +106,5 @@ class ShoesPaginate extends Component {
     );
   }
 }
-
-const Numbers = [
-  {
-    number: 1,
-  },
-  {
-    number: 2,
-  },
-  {
-    number: 3,
-  },
-  {
-    number: 4,
-  },
-  {
-    number: 5,
-  },
-  {
-    number: 6,
-  },
-];
 
 export default withRouter(ShoesPaginate);
