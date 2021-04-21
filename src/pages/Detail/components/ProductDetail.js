@@ -35,10 +35,10 @@ class ProductDetail extends Component {
           season: res.product_info[0].season,
         });
       });
-    this.product_infoDetailReviewData();
+    this.productInfoDetailReviewData();
   };
 
-  product_infoDetailReviewData = () => {
+  productInfoDetailReviewData = () => {
     fetch("/data/DetailReviewdata.json")
       .then((res) => res.json())
       .then((data) => {
