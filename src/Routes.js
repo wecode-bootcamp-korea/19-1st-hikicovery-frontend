@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
-import MainContent from './pages/Main/MainContent';
+import MainContent from './pages/Main/components/MainContent/MainContent';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Shoes from './pages/Shoes/Shoes';

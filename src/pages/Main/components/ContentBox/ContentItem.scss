@@ -1,0 +1,25 @@
+@import '../../../../styles/Common.scss';
+
+.contentItem {
+  margin-bottom: 30px;
+
+  .contentImgBox {
+    width: 100%;
+
+    img {
+      height: 450px;
+    }
+  }
+
+  .itemName {
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .itemText {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #999;
+  }
+}
