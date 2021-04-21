@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import ProductImage from './ProductImage';
-import ProductReview from './ProductReview';
-import './ProductContent.scss';
+import React, { Component } from "react";
+import ProductImage from "./ProductImage";
+import ProductReview from "./ProductReview";
+import "./ProductContent.scss";
 
 class ProductContent extends Component {
   render() {
-    const { reviewList, productInfo } = this.props;
+    const { reviewList, productInfo, handleChange } = this.props;
 
     return (
       productInfo[0] !== undefined && (
@@ -31,7 +31,10 @@ class ProductContent extends Component {
               리뷰 작성시 온라인몰에서 사용 가능한 포인트를 적립해 드립니다.
               (텍스트 리뷰 300포인트, 포토리뷰 1,000 포인트)
             </p>
-            <ProductReview reviewList={reviewList} />
+            <ProductReview
+              reviewList={reviewList}
+              handleChange={handleChange}
+            />
           </div>
           <div className="productTabmenu" id="tabmenu2">
             <h3>상품 고시정보</h3>

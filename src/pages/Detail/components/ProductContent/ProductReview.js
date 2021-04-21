@@ -1,70 +1,31 @@
-import React, { Component } from 'react';
-import ReviewList from './Review/ReviewList';
-import './ProductReview.scss';
+import React, { Component } from "react";
+import ReviewList from "./Review/ReviewList";
+import "./ProductReview.scss";
 
 class ProductReview extends Component {
-  // updateSort = () => {
-  //   const { reviewList } = this.props;
-  //   reviewList.filter(element => {
-  //     return element.score.sort(function (a, b) {
-  //       return b - a;
-  //     });
-  //   });
-  // };
-
   state = {
     options: [
       {
-        name: '댓글보기',
+        name: "댓글보기",
         value: null,
       },
       {
-        name: '최근등록순',
-        value: '최근등록순',
+        name: "최근등록순",
+        value: "최근등록순",
       },
       {
-        name: '최고평점순',
-        value: '최고평점순',
+        name: "최고평점순",
+        value: "최고평점순",
       },
       {
-        name: '최저평점순',
-        value: '최저평점순',
+        name: "최저평점순",
+        value: "최저평점순",
       },
     ],
   };
 
-  handleChange = event => {
-    this.setState({ name: event.target.value });
-    console.log(event.target.name);
-  };
-
-  handleReviewClick = e => {
-    console.log('함수실행!');
-    const { reviewList } = this.props;
-    const { name } = this.state;
-    if (name === '최근등록순') {
-      this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a.date - b.date;
-        }),
-      });
-    } else if (name === '최고평점순') {
-      this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
-        }),
-      });
-    } else if (name === '최저평점순') {
-      this.setState({
-        reviewList: reviewList.sort(function (a, b) {
-          return a.score > b.score ? -1 : a.score < b.score ? 1 : 0;
-        }),
-      });
-    }
-  };
-
   render() {
-    const { reviewList } = this.props;
+    const { reviewList, handleChange } = this.props;
     const { options } = this.state;
     return (
       <div className="productReview">
@@ -81,13 +42,9 @@ class ProductReview extends Component {
             </li>
           </ul>
           <div className="filter">
-            <select
-              name="최근등록순"
-              onChange={this.handleChange}
-              onClick={this.handleReviewClick}
-            >
+            <select onChange={handleChange}>
               {options.map((item, index) => (
-                <option key={index} name={item.name}>
+                <option key={index} name={item.name} value={item.value}>
                   {item.name}
                 </option>
               ))}
@@ -95,7 +52,7 @@ class ProductReview extends Component {
           </div>
         </div>
         <ul className="review">
-          {reviewList.map(element => {
+          {reviewList.map((element) => {
             return (
               <ReviewList
                 key={element.id}

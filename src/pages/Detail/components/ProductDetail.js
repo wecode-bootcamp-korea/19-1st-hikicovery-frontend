@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { GET_PRODUCT_API } from '../config/config';
-import ProductContent from './ProductContent/ProductContent';
-import ProductOption from './ProductOption/ProductOption';
-import './ProductDetail.scss';
+import React, { Component } from "react";
+import { GET_PRODUCT_API } from "../config/config";
+import ProductContent from "./ProductContent/ProductContent";
+import ProductOption from "./ProductOption/ProductOption";
+import "./ProductDetail.scss";
 
 class ProductDetail extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
+      name: "",
       price: 0,
       productStock: [],
       image: [],
@@ -21,10 +21,10 @@ class ProductDetail extends Component {
     };
   }
 
-  componentDidMount = idx => {
+  componentDidMount = (idx) => {
     fetch(`${GET_PRODUCT_API}/7`)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           name: res.product_info[0].name,
           price: res.product_info[0].price,
@@ -39,21 +39,21 @@ class ProductDetail extends Component {
   };
 
   product_infoDetailReviewData = () => {
-    fetch('/data/DetailReviewdata.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch("/data/DetailReviewdata.json")
+      .then((res) => res.json())
+      .then((data) => {
         this.setState({
           reviewList: data,
         });
       });
   };
 
-  handleClickColorList = idx => {
+  handleClickColorList = (idx) => {
     const newArr = Array(this.state.color).fill(false);
     newArr[idx] = true;
     fetch(`http://10.58.1.224:8000/products/${idx}`)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           productInfo: res.product_info,
         });
@@ -64,7 +64,7 @@ class ProductDetail extends Component {
     const { count } = this.state;
 
     if (count === 8) {
-      alert('주문 최대 가능 수량은 8입니다.');
+      alert("주문 최대 가능 수량은 8입니다.");
       return;
     }
 
@@ -77,7 +77,7 @@ class ProductDetail extends Component {
     const { count } = this.state;
 
     if (count === 1) {
-      alert('주문 최소 가능 수량은 1입니다.');
+      alert("주문 최소 가능 수량은 1입니다.");
       return;
     }
 
@@ -91,6 +91,35 @@ class ProductDetail extends Component {
     if (stock === 0) {
       this.setState({
         soldOut: stock === 0,
+      });
+    }
+  };
+
+  handleChange = (event) => {
+    const value = event.target.value;
+    const { reviewList } = this.state;
+
+    if (value === "최근등록순") {
+      this.setState({
+        reviewList: reviewList.sort((a, b) => {
+          return a.date - b.date;
+        }),
+      });
+    }
+
+    if (value === "최고평점순") {
+      this.setState({
+        reviewList: reviewList.sort((a, b) => {
+          return a.score > b.score ? -1 : a.score < b.score ? 1 : 0;
+        }),
+      });
+    }
+
+    if (value === "최저평점순") {
+      this.setState({
+        reviewList: reviewList.sort((a, b) => {
+          return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
+        }),
       });
     }
   };
@@ -109,6 +138,13 @@ class ProductDetail extends Component {
       season,
     } = this.state;
 
+    const {
+      handleChange,
+      onIncreaseCount,
+      onDecreaseCount,
+      handleClickColorList,
+      soldOut,
+    } = this;
     return (
       <div className="productDetail">
         <section className="contentProductDetail">
@@ -116,16 +152,17 @@ class ProductDetail extends Component {
             reviewList={reviewList}
             image={image}
             productInfo={productInfo}
+            handleChange={handleChange}
           />
           <ProductOption
             name={name}
             price={price}
             count={count}
-            onIncreaseCount={this.onIncreaseCount}
-            onDecreaseCount={this.onDecreaseCount}
-            handleClickColorList={this.handleClickColorList}
+            onIncreaseCount={onIncreaseCount}
+            onDecreaseCount={onDecreaseCount}
+            handleClickColorList={handleClickColorList}
             color={color}
-            soldOut={this.soldOut}
+            soldOut={soldOut}
             productStock={productStock}
             reviewList={reviewList}
             isSelect={isSelect}

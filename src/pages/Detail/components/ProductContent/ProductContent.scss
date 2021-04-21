@@ -1,4 +1,4 @@
-@import '../../../../styles/Common.scss';
+@import "../../../../styles/Common.scss";
 
 .productContent {
   width: 790px;
@@ -33,6 +33,10 @@
 
   .productTabmenu {
     width: 100%;
+    margin: 100px 0;
+    &:last-child {
+      margin-bottom: 100px;
+    }
 
     h3 {
       margin-bottom: 15px;

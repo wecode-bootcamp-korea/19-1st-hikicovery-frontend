@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './PaymentTitle.scss';
+import React, { Component } from "react";
+import "./PaymentTitle.scss";
 
 class PaymentTitle extends Component {
   render() {
