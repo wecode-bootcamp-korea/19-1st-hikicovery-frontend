@@ -5,6 +5,7 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Shoes from './pages/Shoes/Shoes';
 import Detail from './pages/Detail/Detail';
+import Basket from './pages/Basket/Basket';
 
 class Routes extends Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/shoes" component={Shoes} />
           <Route exact path="/shoes/detail" component={Detail} />
+          <Route exact path="/basket" component={Basket} />
         </Switch>
       </Router>
     );
