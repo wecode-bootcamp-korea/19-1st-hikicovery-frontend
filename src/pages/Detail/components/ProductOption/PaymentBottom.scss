@@ -1,0 +1,39 @@
+@import '../../../../styles/Common.scss';
+
+.paymentBottom {
+  @extend %flex-spacebetween;
+
+  li {
+    font-size: 13px;
+    a {
+      font-size: 13px;
+      text-decoration: underline;
+    }
+  }
+
+  .iconBox {
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: #fff;
+      cursor: pointer;
+
+      svg {
+        font-size: 20px;
+      }
+    }
+
+    .heart {
+      svg {
+        margin-left: 20px;
+      }
+    }
+
+    .heartCount {
+      margin-left: 10px;
+      padding-bottom: 7px;
+      font-size: 13px;
+    }
+  }
+}
