@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './ContentItem.scss';
 
-class ContentItem extends Component {
+class Promotion extends Component {
   render() {
-    const { image, title, text, goToProductList } = this.props;
+    const { image, title, text, price, goToSignUp } = this.props;
     return (
-      <div className="conten">
+      <div className="promotion">
         <li class="contentItem">
           <div class="contentImgBox">
-            <img src={image} alt="컨텐츠사진" onClick={goToProductList} />
+            <img src={image} alt="컨텐츠사진" onClick={goToSignUp} />
           </div>
           <h3 class="itemName">{title}</h3>
+          <p class="itemPrice">{price}</p>
           <p class="itemText">{text}</p>
         </li>
       </div>
@@ -18,4 +18,4 @@ class ContentItem extends Component {
   }
 }
 
-export default ContentItem;
+export default Promotion;
