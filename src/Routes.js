@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import MainContent from './pages/Main/components/MainContent/MainContent';
@@ -7,7 +7,7 @@ import Signup from './pages/Signup/Signup';
 import Shoes from './pages/Shoes/Shoes';
 import Detail from './pages/Detail/Detail';
 
-class Routes extends React.Component {
+class Routes extends Component {
   render() {
     return (
       <Router>
