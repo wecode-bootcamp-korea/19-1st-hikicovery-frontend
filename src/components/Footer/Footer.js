@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./Footer.scss";
-import { IoLogoGithub, IoLogoInstagram } from "react-icons/io";
+import React, { Component } from 'react';
+import './Footer.scss';
+import { IoLogoGithub, IoLogoInstagram } from 'react-icons/io';
 
 class Footer extends Component {
   render() {
@@ -57,11 +57,11 @@ class Footer extends Component {
 export default Footer;
 
 const FOOTERTEXT = [
-  "공지사항",
-  "매장안내",
-  "단채구매문의",
-  "제휴문의",
-  "대리점 개설문의",
-  "고객센터",
-  "1:1 고객상담",
+  '공지사항',
+  '매장안내',
+  '단채구매문의',
+  '제휴문의',
+  '대리점 개설문의',
+  '고객센터',
+  '1:1 고객상담',
 ];
