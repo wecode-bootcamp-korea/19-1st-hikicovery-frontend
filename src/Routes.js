@@ -13,15 +13,9 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/login" component={Login} />
-<<<<<<< HEAD
-          <Route exact path="/signup" component={Signup} /> */}
-          <Route exact path="/shoes" component={Shoes} />
-          {/* <Route exact path="/shoes/detail" component={Detail} /> */}
-=======
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/shoes" component={Shoes} />
-          <Route exact path="/shoes/detail" component={Detail} />
->>>>>>> master
+          {/* <Route exact path="/shoes/detail" component={Detail} /> */}
         </Switch>
       </Router>
     );

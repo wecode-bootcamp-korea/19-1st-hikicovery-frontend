@@ -20,6 +20,9 @@ class ShoesList extends Component {
       open: false,
       PageNo: 1,
       PageNoMax: 1,
+      // ButtonClick: [...Array(Number(this.state.PageNoMax)).keys()]
+      //   .fill(false)
+      //   .fill(true, 0, 1),
     };
   }
 
@@ -103,6 +106,14 @@ class ShoesList extends Component {
     });
   };
 
+  // isButtonClick = index => {
+  //   const buttonList = [...Array(this.state.ButtonClick.length)].fill(false);
+  //   buttonList[index] = true;
+  //   this.setState({
+  //     ButtonClick: buttonList,
+  //   });
+  // };
+
   render() {
     const { shoesData } = this.state;
 
@@ -182,6 +193,7 @@ class ShoesList extends Component {
                   key={index}
                   num={num + 1}
                   fetchShoes={this.fetchShoes}
+                  // isButtonClick={this.isButtonClick}
                 />
               ))}
               <li className="nextArrow">
