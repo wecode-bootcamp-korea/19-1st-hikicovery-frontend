@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import LoginForm from './LoginForm/LoginForm';
 import AccountBanner from '../../components/AccountBanner/AccountBanner';
+import { API_URL } from '../../config';
 import './Login.scss';
 
 const TITLE = '로그인';
@@ -22,7 +23,7 @@ class Login extends Component {
   chkLogin = e => {
     e.preventDefault();
     const { inputId, inputPw } = this.state;
-    fetch('http://10.58.7.182:8000/users/login', {
+    fetch(`${API_URL}users/login`, {
       method: 'POST',
       body: JSON.stringify({
         account: inputId,

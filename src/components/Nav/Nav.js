@@ -63,7 +63,7 @@ class Nav extends Component {
                 onClick={() => {
                   isView(index);
                 }}
-                // to={`/${category.category}`}
+                to={`/${category.category}`}
               >
                 {category.category}
               </Link>

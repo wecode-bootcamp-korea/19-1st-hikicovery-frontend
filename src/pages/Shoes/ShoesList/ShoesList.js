@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { API_URL } from '../../../config';
 import { GoPlus } from 'react-icons/go';
 import { FaMinus } from 'react-icons/fa';
 import { FaAngleDoubleLeft } from 'react-icons/fa';
@@ -28,7 +29,7 @@ class ShoesList extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.search !== this.props.location.search) {
-      fetch(`http://10.58.1.224:8000/products${this.props.location.search}`)
+      fetch(`${API_URL}products${this.props.location.search}`)
         .then(res => res.json())
         .then(data => {
           this.setState({
@@ -41,9 +42,7 @@ class ShoesList extends Component {
 
   getProductData = () => {
     const { PageNo, ordering } = this.state;
-    fetch(
-      `http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=8&ordering=${ordering}`
-    )
+    fetch(`${API_URL}products?PageNo=${PageNo}&Show=8&ordering=${ordering}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -146,6 +145,7 @@ class ShoesList extends Component {
                   // />
                   <ShoesCard
                     key={shoes.id}
+                    id={shoes.id}
                     image={shoes.image}
                     name={shoes.name}
                     price={shoes.price}

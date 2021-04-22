@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { API_URL } from '../../config';
 import AccountBanner from '../../components/AccountBanner/AccountBanner';
 import PremiumContents from './PremiumContents/PremiumContents';
 import './Signup.scss';
@@ -53,7 +54,7 @@ class Signup extends Component {
     const date = year + '-' + month + '-' + day;
     const phoneNum = phoneNum1 + '-' + phoneNum2 + '-' + phoneNum3;
     const emailMix = email + '@' + emailDot;
-    fetch('http://10.58.7.182:8000/users/signup', {
+    fetch(`${API_URL}users/signup`, {
       method: 'POST',
       body: JSON.stringify({
         account: account,
