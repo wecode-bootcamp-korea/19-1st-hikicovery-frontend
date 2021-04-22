@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import LoginForm from './LoginForm/LoginForm';
+import AccountBanner from '../../components/AccountBanner/AccountBanner';
 import './Login.scss';
+
+const TITLE = '로그인';
 
 class Login extends Component {
   state = {
@@ -37,13 +40,16 @@ class Login extends Component {
   render() {
     const { inputOnChange, chkLogin } = this;
     return (
-      <article className="loginContainer">
-        <section className="loginContents">
-          <div className="loginWrap">
-            <LoginForm inputOnChange={inputOnChange} chkLogin={chkLogin} />
-          </div>
-        </section>
-      </article>
+      <>
+        <AccountBanner title={TITLE} />
+        <article className="loginContainer">
+          <section className="loginContents">
+            <div className="loginWrap">
+              <LoginForm inputOnChange={inputOnChange} chkLogin={chkLogin} />
+            </div>
+          </section>
+        </article>
+      </>
     );
   }
 }
