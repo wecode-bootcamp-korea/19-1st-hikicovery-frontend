@@ -1,0 +1,11 @@
+@import '../../../styles/Common.scss';
+
+.productDetail {
+  width: 1280px;
+  margin: 0 230px;
+
+  .contentProductDetail {
+    display: flex;
+    justify-content: space-between;
+  }
+}

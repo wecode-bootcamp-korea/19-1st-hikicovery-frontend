@@ -1,0 +1,20 @@
+@import '../../../../styles/Common.scss';
+
+.optionDelivery {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .paymentOptionTitle {
+    font-size: 14px;
+    padding-right: 60px;
+  }
+
+  .deliveryInner {
+    label {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+  }
+}

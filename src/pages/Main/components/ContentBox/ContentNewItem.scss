@@ -1,0 +1,30 @@
+@import '../../../../styles/Common.scss';
+
+.contentItem {
+  margin-bottom: 30px;
+
+  .contentImgBox {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  .itemName {
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .itemPrice {
+    padding-top: 7px;
+    font-size: 14px;
+  }
+
+  .itemText {
+    font-size: 14px;
+    color: #999;
+  }
+}

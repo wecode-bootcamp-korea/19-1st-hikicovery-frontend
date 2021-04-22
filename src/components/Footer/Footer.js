@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <div className="footerWrap">
-          <div class="footerLeft">
+          <div className="footerLeft">
             <ul>
               <li className="footerNav">
                 <ul className="footerNavInner">
@@ -33,9 +33,9 @@ class Footer extends Component {
               </li>
             </ul>
           </div>
-          <div class="footerRight">
+          <div className="footerRight">
             <ul>
-              <li class="footerIconWrap">
+              <li className="footerIconWrap">
                 <a href="/">
                   <IoLogoGithub />
                 </a>

@@ -1,0 +1,50 @@
+@import '../../../../styles/Common.scss';
+
+.productReview {
+  margin-top: 40px;
+  padding-bottom: 50px;
+
+  .reviewWrap {
+    @extend %flex-spacebetween;
+    border-bottom: 1px solid #555;
+
+    .reviewTabMenu {
+      @extend %flex-spacebetween;
+      width: 300px;
+
+      li {
+        position: relative;
+        padding: 10px 0;
+
+        &:first-child {
+          &::after {
+            display: none;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          top: 14px;
+          left: -20px;
+          width: 1px;
+          height: 20px;
+          background-color: #555;
+          content: '';
+        }
+
+        .red {
+          color: red;
+        }
+      }
+    }
+
+    .filter {
+      background: none;
+
+      select {
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+}
