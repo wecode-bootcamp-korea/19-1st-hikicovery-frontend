@@ -106,11 +106,14 @@ class ShoesList extends Component {
           <section className="filter">
             <div className="firstFilter">
               <ul>
-                <li onClick={() => this.clickSort('-release_at')}>추천순</li>
-                <li onClick={() => this.clickSort('-price')}>신상품순</li>
-                <li onClick={() => this.clickSort('-price')}>판매순</li>
+                <li onClick={() => this.clickSort('-release_at')}>신상품순</li>
+                <li
+                  onClick={() => this.clickSort('-productsale__product_sales')}
+                >
+                  판매순
+                </li>
                 <li onClick={() => this.clickSort('-price')}>높은가격순</li>
-                <li onClick={() => this.clickSort('-price')}>낮은가격순</li>
+                <li onClick={() => this.clickSort('price')}>낮은가격순</li>
               </ul>
             </div>
 
