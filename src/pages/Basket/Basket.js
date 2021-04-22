@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaMinus, FaTimes } from 'react-icons/fa';
-import Nav from '../../components/Nav/Nav';
-import Footer from '../../components/Footer/Footer';
-import FixMenuBar from '../../components/FixMenuBar/FixMenuBar';
+import AccountBanner from '../../components/AccountBanner/AccountBanner';
+import { API_URL } from '../../config';
 import './Basket.scss';
+
+const TITLE = '장바구니';
 
 class Basket extends Component {
   state = {
@@ -49,7 +50,7 @@ class Basket extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.6.166:8000/cart')
+    fetch(`${API_URL}cart`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -61,11 +62,9 @@ class Basket extends Component {
   render() {
     const { basketData } = this.state;
     const { changeQuantity, handleQuantity, delProduct } = this;
-    console.log(basketData);
     return (
       <>
-        <Nav />
-        <FixMenuBar />
+        <AccountBanner title={TITLE} />
         <section className="basketCotainer">
           <article className="basketContents">
             <ul className="buyStepBox">
@@ -170,11 +169,9 @@ class Basket extends Component {
                   </div>
                 </div>
               </div>
-              <div className="orderRight">asdf</div>
             </div>
           </article>
         </section>
-        <Footer />
       </>
     );
   }

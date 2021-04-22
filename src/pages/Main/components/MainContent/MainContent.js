@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ContentItem from '../ContentBox/ContentItem';
 import ContentNewItem from '../ContentBox/ContentNewItem';
 import Promotion from '../ContentBox/Promotion';
+import { API_URL } from '../../../../config';
 import './MainContent.scss';
 
 class MainContent extends Component {
@@ -17,7 +18,7 @@ class MainContent extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.1.224:8000/products?ordering=-release_at&Show=1')
+    fetch(`${API_URL}products?ordering=-release_at&Show=1`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -26,7 +27,7 @@ class MainContent extends Component {
       });
 
     fetch(
-      `http://10.58.1.224:8000/products?category=1&ordering=-productsale__product_sales&Show=1`
+      `${API_URL}products?category=1&ordering=-productsale__product_sales&Show=1`
     )
       .then(res => res.json())
       .then(res => {
@@ -42,7 +43,6 @@ class MainContent extends Component {
         this.setState({
           mainData: data,
         });
-        // console.log(data);
       });
 
     fetch('/data/promotiondata.json')
@@ -55,22 +55,24 @@ class MainContent extends Component {
   }
 
   goToSignUp = () => {
-    console.log('클릭됨');
     this.props.history.push('/signup');
   };
 
   goToProductList = () => {
-    console.log('클릭됨');
     this.props.history.push('/shoes');
   };
 
   goToProductDetail = () => {
-    console.log('클릭됨');
     this.props.history.push('/shoes/datail');
+  };
+
+  goToBasket = () => {
+    this.props.history.push('/basket');
   };
 
   render() {
     const { productList, bestItem, mainData, promotion } = this.state;
+    const { goToProductList, goToProductDetail, goToSignUp, goToBasket } = this;
     return (
       <div>
         <div className="mainContent">
@@ -85,7 +87,7 @@ class MainContent extends Component {
                       image={element.image[0].image_url}
                       title={element.name}
                       text={element.description}
-                      goToProductList={this.goToProductList}
+                      goToProductList={goToProductList}
                     />
                   );
                 })}
@@ -96,7 +98,7 @@ class MainContent extends Component {
                       image={element.image[0].image_url}
                       title={element.name}
                       text={element.description}
-                      goToProductList={this.goToProductList}
+                      goToProductList={goToProductList}
                     />
                   );
                 })}
@@ -107,7 +109,7 @@ class MainContent extends Component {
                       image={element.image[0].image_url}
                       title={element.name}
                       text={element.description}
-                      goToProductList={this.goToProductList}
+                      goToProductList={goToProductList}
                     />
                   );
                 })}
@@ -124,7 +126,7 @@ class MainContent extends Component {
                       image={element.image[0].image_url}
                       title={element.name}
                       text={element.description}
-                      goToProductDetail={this.goToProductDetail}
+                      goToProductDetail={goToProductDetail}
                     />
                   );
                 })}
@@ -155,13 +157,14 @@ class MainContent extends Component {
               <ul className="contentItemBox">
                 <h2 className="contentItemHeader">STYLE PICK</h2>
                 {mainData.map(element => {
+                  console.log(mainData);
                   return (
                     <ContentItem
                       key={element.id}
                       image={element.image}
                       title={element.title}
                       text={element.text}
-                      goToProductList={this.goToProductList}
+                      goToProductList={goToProductList}
                     />
                   );
                 })}
@@ -173,7 +176,8 @@ class MainContent extends Component {
                       image={element.image}
                       title={element.title}
                       text={element.text}
-                      goToSignUp={this.goToSignUp}
+                      goToSignUp={goToSignUp}
+                      goToBasket={goToBasket}
                     />
                   );
                 })}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { GET_PRODUCT_API } from '../config/config';
+import { withRouter } from 'react-router-dom';
 import ProductContent from './ProductContent/ProductContent';
 import ProductOption from './ProductOption/ProductOption';
+import { API_URL } from '../../../config';
+
 import './ProductDetail.scss';
 
 class ProductDetail extends Component {
@@ -22,7 +24,8 @@ class ProductDetail extends Component {
   }
 
   componentDidMount = idx => {
-    fetch(`${GET_PRODUCT_API}/7`)
+    const { id } = this.props.match.params;
+    fetch(`${API_URL}products/${id}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -51,7 +54,7 @@ class ProductDetail extends Component {
   handleClickColorList = idx => {
     const newArr = Array(this.state.color).fill(false);
     newArr[idx] = true;
-    fetch(`http://10.58.1.224:8000/products/${idx}`)
+    fetch(`${API_URL}products/${idx}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -175,4 +178,4 @@ class ProductDetail extends Component {
   }
 }
 
-export default ProductDetail;
+export default withRouter(ProductDetail);

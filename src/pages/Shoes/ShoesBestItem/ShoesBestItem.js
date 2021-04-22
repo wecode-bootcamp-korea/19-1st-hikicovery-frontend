@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import ShoesCard from '../ShoesCard/ShoesCard';
 import './ShoesBestItem.scss';
+import { API_URL } from '../../../config';
 
 class ShoesBestItem extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class ShoesBestItem extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.1.224:8000/products/best-items', {
+    fetch(`${API_URL}products/best-items`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -52,6 +53,7 @@ class ShoesBestItem extends Component {
                 // />
                 <ShoesCard
                   key={shoes.id}
+                  id={shoes.id}
                   image={shoes.image}
                   name={shoes.name}
                   price={shoes.price}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './ShoesCard.scss';
 
 class ShoesCard extends Component {
@@ -27,7 +28,6 @@ class ShoesCard extends Component {
     // } = this.props;
 
     const { id, image, name, price, product_stock } = this.props;
-
     return (
       <div className="shoescard">
         <li className="shoesCardLi">
@@ -35,6 +35,9 @@ class ShoesCard extends Component {
             className="shoesCardImg"
             onMouseOver={this.handleHover}
             onMouseLeave={this.handleHover}
+            onClick={() => {
+              this.props.history.push(`/shoes/${id}`);
+            }}
           >
             {image.length > 0 && (
               <img
@@ -102,4 +105,4 @@ class ShoesCard extends Component {
   }
 }
 
-export default ShoesCard;
+export default withRouter(ShoesCard);
