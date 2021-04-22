@@ -11,19 +11,30 @@ class Basket extends Component {
     basketData: [],
   };
 
-  changeQuantity = (num, index) => {
+  changeQuantity = (num, targetId) => {
     const { basketData } = this.state;
-    const array = [...basketData];
-    array[index].quantity = array[index].quantity + num;
-    this.setState(array);
+    const changeQuantity = basketData.map((product, index) => {
+      return index === targetId
+        ? { ...product, quantity: product.quantity + num }
+        : product;
+    });
+
+    this.setState({
+      ...basketData,
+      basketData: changeQuantity,
+    });
   };
 
-  handleQuantity = (e, index) => {
+  handleQuantity = (e, targetId) => {
     const { value } = e.target;
     const { basketData } = this.state;
-    const array = [...basketData];
-    array[index].quantity = value * 1;
-    this.setState(array);
+    const handleQuantity = basketData.map((product, index) => {
+      return index === targetId ? { ...product, quantity: value * 1 } : product;
+    });
+    this.setState({
+      ...basketData,
+      basketData: handleQuantity,
+    });
   };
 
   delProduct = id => {
@@ -50,6 +61,7 @@ class Basket extends Component {
   render() {
     const { basketData } = this.state;
     const { changeQuantity, handleQuantity, delProduct } = this;
+    console.log(basketData);
     return (
       <>
         <Nav />
