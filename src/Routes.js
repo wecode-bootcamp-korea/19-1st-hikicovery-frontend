@@ -9,6 +9,7 @@ import Detail from './pages/Detail/Detail';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import FixMenuBar from './components/FixMenuBar/FixMenuBar';
+import Basket from './pages/Basket/Basket';
 
 class Routes extends Component {
   render() {
@@ -24,6 +25,7 @@ class Routes extends Component {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/shoes" component={Shoes} />
             <Route exact path="/shoes/detail" component={Detail} />
+            <Route exact path="/basket" component={Basket} />
             <Footer />
           </div>
         </Switch>
