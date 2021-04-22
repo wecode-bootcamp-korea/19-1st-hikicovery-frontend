@@ -36,7 +36,9 @@ class FixMenuBar extends Component {
           </li>
           <li className="fixMenuBarMenu">
             <button className="fixMenuBarButton">
-              <BsBagFill></BsBagFill>
+              <Link to="/basket">
+                <BsBagFill></BsBagFill>
+              </Link>
             </button>
           </li>
           <li className="fixMenuBarMenu">

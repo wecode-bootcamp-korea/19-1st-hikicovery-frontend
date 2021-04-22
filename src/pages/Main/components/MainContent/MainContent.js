@@ -23,16 +23,16 @@ class MainContent extends Component {
         this.setState({
           productList: res.product_list,
         });
-        console.log(res.product_list);
       });
 
     fetch(
-      'http://10.58.1.224:8000/products?category=1&ordering=-productsale__product_sales&Show=1'
+      `http://10.58.1.224:8000/products?category=1&ordering=-productsale__product_sales&Show=1`
     )
       .then(res => res.json())
       .then(res => {
         this.setState({
           bestItem: res.product_list,
+          num: res.product_list,
         });
       });
 
@@ -77,6 +77,44 @@ class MainContent extends Component {
           <section className="mainContentWrap">
             <article className="mainContentBox">
               <ul className="contentItemBox">
+                <h2 className="contentItemHeader">WEEKLY BEST</h2>
+                {bestItem.map(element => {
+                  return (
+                    <ContentItem
+                      key={element.id}
+                      image={element.image[0].image_url}
+                      title={element.name}
+                      text={element.description}
+                      goToProductList={this.goToProductList}
+                    />
+                  );
+                })}
+                {bestItem.map(element => {
+                  return (
+                    <ContentItem
+                      key={element.id}
+                      image={element.image[0].image_url}
+                      title={element.name}
+                      text={element.description}
+                      goToProductList={this.goToProductList}
+                    />
+                  );
+                })}
+                {bestItem.map(element => {
+                  return (
+                    <ContentItem
+                      key={element.id}
+                      image={element.image[0].image_url}
+                      title={element.name}
+                      text={element.description}
+                      goToProductList={this.goToProductList}
+                    />
+                  );
+                })}
+              </ul>
+            </article>
+            <article className="mainContentBox">
+              <ul className="contentItemBox">
                 <h2 className="contentItemHeader">NEW ARRIVAL</h2>
                 {productList.map(element => {
                   return (
@@ -87,22 +125,6 @@ class MainContent extends Component {
                       title={element.name}
                       text={element.description}
                       goToProductDetail={this.goToProductDetail}
-                    />
-                  );
-                })}
-              </ul>
-            </article>
-            <article className="mainContentBox">
-              <ul className="contentItemBox">
-                <h2 className="contentItemHeader">WEEKLY BEST</h2>
-                {bestItem.map(element => {
-                  return (
-                    <ContentItem
-                      key={element.id}
-                      image={element.image[0].image_url}
-                      title={element.name}
-                      text={element.description}
-                      goToProductList={this.goToProductList}
                     />
                   );
                 })}

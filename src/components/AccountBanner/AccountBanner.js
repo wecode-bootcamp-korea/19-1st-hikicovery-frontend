@@ -5,16 +5,17 @@ import './AccountBanner.scss';
 
 class AccountBanner extends Component {
   render() {
+    const { title } = this.props;
     return (
       <div className="accountBanner">
         <div className="userFormBanner">
-          <h2 className="bannerTitle">회원가입</h2>
+          <h2 className="bannerTitle">{title}</h2>
           <div className="bannerLinkPaths">
             <Link to="">Home</Link>
             <div className="arrowIcon">
               <RiArrowRightSLine />
             </div>
-            <Link to="">회원가입</Link>
+            <Link to="">{title}</Link>
           </div>
           <div className="underBar"></div>
         </div>

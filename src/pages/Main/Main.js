@@ -18,24 +18,21 @@ class Main extends Component {
     const { imgIndex } = this.state;
     return (
       <div>
-        <div className="main_wrapper">
-          <ul className="main_backImg_wrapper">
-            <li>
+        <div className="mainWrapper">
+          <ul className="mainBackImgWrapper">
+            <li className="mainImgBox">
               <img src={MAIN_BACK_IMG_LIST[imgIndex].url}></img>
             </li>
           </ul>
 
-          <div className="main_slide_controller">
+          <div className="mainSlideController">
             <button
               onClick={() => changeMainImg(-1)}
-              className="main_prev_button"
+              className="mainPrevButton"
             >
               <FaArrowLeft></FaArrowLeft>
             </button>
-            <button
-              onClick={() => changeMainImg(1)}
-              className="main_next_button"
-            >
+            <button onClick={() => changeMainImg(1)} className="mainNextButton">
               <FaArrowRight></FaArrowRight>
             </button>
           </div>
