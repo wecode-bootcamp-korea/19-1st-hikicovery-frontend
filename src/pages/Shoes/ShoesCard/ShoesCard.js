@@ -16,6 +16,7 @@ class ShoesCard extends Component {
   };
 
   render() {
+    // 목데이터 부분
     // const {
     //   id,
     //   shoes_img,
@@ -65,6 +66,7 @@ class ShoesCard extends Component {
         </li>
       </div>
 
+      // 목데이터 부분
       // <div className="shoescard">
       //   <li className="shoesCardLi">
       //     <div
