@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import ProductImage from "./ProductImage";
-import ProductReview from "./ProductReview";
-import "./ProductContent.scss";
+import React, { Component } from 'react';
+import ProductImage from './ProductImage';
+import ProductReview from './ProductReview';
+import './ProductContent.scss';
 
 class ProductContent extends Component {
   render() {

@@ -6,18 +6,26 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Shoes from './pages/Shoes/Shoes';
 import Detail from './pages/Detail/Detail';
+import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer';
+import FixMenuBar from './components/FixMenuBar/FixMenuBar';
 
 class Routes extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Main} />
-          <Route exact path="/main" component={MainContent} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/shoes" component={Shoes} />
-          <Route exact path="/shoes/detail" component={Detail} />
+          <div>
+            <Nav />
+            <FixMenuBar />
+            <Route exact path="/" component={Main} />
+            <Route exact path="/main" component={MainContent} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/shoes" component={Shoes} />
+            <Route exact path="/shoes/detail" component={Detail} />
+            <Footer />
+          </div>
         </Switch>
       </Router>
     );

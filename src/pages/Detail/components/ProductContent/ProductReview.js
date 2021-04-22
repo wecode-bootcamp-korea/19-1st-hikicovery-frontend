@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import ReviewList from "./Review/ReviewList";
-import "./ProductReview.scss";
+import React, { Component } from 'react';
+import ReviewList from './Review/ReviewList';
+import './ProductReview.scss';
 
 class ProductReview extends Component {
   state = {
     options: [
       {
-        name: "댓글보기",
+        name: '댓글보기',
         value: null,
       },
       {
-        name: "최근등록순",
-        value: "최근등록순",
+        name: '최근등록순',
+        value: '최근등록순',
       },
       {
-        name: "최고평점순",
-        value: "최고평점순",
+        name: '최고평점순',
+        value: '최고평점순',
       },
       {
-        name: "최저평점순",
-        value: "최저평점순",
+        name: '최저평점순',
+        value: '최저평점순',
       },
     ],
   };
@@ -52,7 +52,7 @@ class ProductReview extends Component {
           </div>
         </div>
         <ul className="review">
-          {reviewList.map((element) => {
+          {reviewList.map(element => {
             return (
               <ReviewList
                 key={element.id}

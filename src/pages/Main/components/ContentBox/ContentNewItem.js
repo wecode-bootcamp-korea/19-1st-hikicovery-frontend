@@ -6,13 +6,13 @@ class ContentNewItem extends Component {
     const { image, title, text, price, goToProductDetail } = this.props;
     return (
       <div className="contentNewItem">
-        <li class="contentItem">
-          <div class="contentImgBox">
+        <li className="contentItem">
+          <div className="contentImgBox">
             <img src={image} onClick={goToProductDetail} alt="컨텐츠사진" />
           </div>
-          <h3 class="itemName">{title}</h3>
-          <p class="itemPrice">{price}</p>
-          <p class="itemText">{text}</p>
+          <h3 className="itemName">{title}</h3>
+          <p className="itemPrice">{price}</p>
+          <p className="itemText">{text}</p>
         </li>
       </div>
     );

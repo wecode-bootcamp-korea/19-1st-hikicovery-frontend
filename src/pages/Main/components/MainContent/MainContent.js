@@ -10,32 +10,30 @@ class MainContent extends Component {
     super();
     this.state = {
       mainData: [],
-      newArrival: [],
-      weeklyBest: [],
+      productList: [],
+      bestItem: [],
       promotion: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://10.58.1.224:8000/products/new-arrivals', {
-      method: 'GET',
-    })
+    fetch('http://10.58.1.224:8000/products?ordering=-release_at&Show=1')
       .then(res => res.json())
       .then(res => {
         this.setState({
-          newArrival: res.new_arrivals,
+          productList: res.product_list,
         });
+        console.log(res.product_list);
       });
 
-    fetch('http://10.58.1.224:8000/products/weekly-best/1', {
-      method: 'GET',
-    })
+    fetch(
+      'http://10.58.1.224:8000/products?category=1&ordering=-productsale__product_sales&Show=1'
+    )
       .then(res => res.json())
       .then(res => {
         this.setState({
-          weeklyBest: res.weekly_best,
+          bestItem: res.product_list,
         });
-        console.log(res.weekly_best[0].name);
       });
 
     fetch('/data/maindata.json')
@@ -44,7 +42,7 @@ class MainContent extends Component {
         this.setState({
           mainData: data,
         });
-        console.log(data);
+        // console.log(data);
       });
 
     fetch('/data/promotiondata.json')
@@ -72,15 +70,15 @@ class MainContent extends Component {
   };
 
   render() {
-    const { newArrival, weeklyBest, mainData, promotion } = this.state;
+    const { productList, bestItem, mainData, promotion } = this.state;
     return (
       <div>
-        <div class="mainContent">
-          <section class="mainContentWrap">
-            <article class="mainContentBox">
-              <ul class="contentItemBox">
-                <h2 class="contentItemHeader">NEW ARRIVAL</h2>
-                {newArrival.map(element => {
+        <div className="mainContent">
+          <section className="mainContentWrap">
+            <article className="mainContentBox">
+              <ul className="contentItemBox">
+                <h2 className="contentItemHeader">NEW ARRIVAL</h2>
+                {productList.map(element => {
                   return (
                     <ContentNewItem
                       key={element.id}
@@ -94,10 +92,10 @@ class MainContent extends Component {
                 })}
               </ul>
             </article>
-            <article class="mainContentBox">
-              <ul class="contentItemBox">
-                <h2 class="contentItemHeader">WEEKLY BEST</h2>
-                {weeklyBest.map(element => {
+            <article className="mainContentBox">
+              <ul className="contentItemBox">
+                <h2 className="contentItemHeader">WEEKLY BEST</h2>
+                {bestItem.map(element => {
                   return (
                     <ContentItem
                       key={element.id}
@@ -108,9 +106,9 @@ class MainContent extends Component {
                     />
                   );
                 })}
-                <h2 class="contentItemHeader topBorder">#STYLE in SNS</h2>
-                <li class="snsItem">
-                  <div class="snsImgBox">
+                <h2 className="contentItemHeader topBorder">#STYLE in SNS</h2>
+                <li className="snsItem">
+                  <div className="snsImgBox">
                     <img
                       src="https://z1photorankmedia-a.akamaihd.net/media/p/b/h/pbhvwx4/normal.jpg"
                       alt="컨텐츠사진"
@@ -131,9 +129,9 @@ class MainContent extends Component {
                 </li>
               </ul>
             </article>
-            <article class="mainContentBox">
-              <ul class="contentItemBox">
-                <h2 class="contentItemHeader">STYLE PICK</h2>
+            <article className="mainContentBox">
+              <ul className="contentItemBox">
+                <h2 className="contentItemHeader">STYLE PICK</h2>
                 {mainData.map(element => {
                   return (
                     <ContentItem
@@ -145,7 +143,7 @@ class MainContent extends Component {
                     />
                   );
                 })}
-                <h2 class="contentItemHeader topBorder">PROMOTION</h2>
+                <h2 className="contentItemHeader topBorder">PROMOTION</h2>
                 {promotion.map(element => {
                   return (
                     <Promotion
