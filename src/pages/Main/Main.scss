@@ -1,0 +1,37 @@
+@import '../../styles/Common.scss';
+
+.main_wrapper {
+  position: relative;
+  height: 100vh;
+
+  .main_backImg_wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main_slide_controller {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    top: 50%;
+
+    .main_prev_button,
+    .main_next_button {
+      height: 40px;
+      width: 80px;
+      background-color: transparent;
+      cursor: pointer;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+
+      svg:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
