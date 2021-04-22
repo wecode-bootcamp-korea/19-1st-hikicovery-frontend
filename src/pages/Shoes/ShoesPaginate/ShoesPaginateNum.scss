@@ -5,5 +5,8 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  border: 1px solid #000;
+
+  &:hover {
+    background-color: #eee;
+  }
 }

@@ -24,12 +24,9 @@ export default class ShoesListButton extends Component {
   }
 
   handleSelectedSize = size => {
-    this.setState(
-      {
-        selectedSize: [...this.state.selectedSize, size],
-      }
-      // () => console.log(this.state.selectedSize) // 콜백함수 : 함수의 인자로 들어간 함수
-    );
+    this.setState({
+      selectedSize: [...this.state.selectedSize, size],
+    });
   };
 
   handleSelectedColor = color => {
@@ -73,7 +70,6 @@ export default class ShoesListButton extends Component {
                           ? 'buttonColorimg'
                           : 'buttonColorimgNo'
                       }
-                      //클릭시 보더 표시 어떻게?
                       src={shoesColor.img_url}
                       key={shoesColor}
                       onClick={() => this.handleSelectedColor(shoesColor)}

@@ -22,6 +22,7 @@ class ShoesBestItem extends Component {
       });
   }
 
+  //목데이터부분
   // componentDidMount() {
   //   fetch('/data/ShoesData.json')
   //     .then(json => json.json())
@@ -40,6 +41,7 @@ class ShoesBestItem extends Component {
           <ul className="shoesCardUl">
             {shoesData.map(shoes => {
               return (
+                //목데이터부분
                 // <ShoesCard
                 //   key={shoes.id}
                 //   shoes_img={shoes.shoes_img}

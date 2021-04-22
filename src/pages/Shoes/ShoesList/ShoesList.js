@@ -10,8 +10,6 @@ import ShoesPaginateNum from '../ShoesPaginate/ShoesPaginateNum';
 import '../ShoesPaginate/ShoesPaginate.scss';
 import './ShoesList.scss';
 
-const SHOW = 8;
-
 class ShoesList extends Component {
   constructor() {
     super();
@@ -20,21 +18,9 @@ class ShoesList extends Component {
       open: false,
       PageNo: 1,
       PageNoMax: 1,
-      // ButtonClick: [...Array(Number(this.state.PageNoMax)).keys()]
-      //   .fill(false)
-      //   .fill(true, 0, 1),
+      ordering: '-release_at',
     };
   }
-
-  // componentDidMount() {
-  //   fetch('/data/ShoesData.json')
-  //     .then(json => json.json())
-  //     .then(data =>
-  //       this.setState({
-  //         shoesData: data.shoes,
-  //       })
-  //     );
-  // }
 
   componentDidMount() {
     this.getProductData();
@@ -54,15 +40,17 @@ class ShoesList extends Component {
   }
 
   getProductData = () => {
-    const { PageNo } = this.state;
-    fetch(`http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=${SHOW}`)
+    const { PageNo, ordering } = this.state;
+    fetch(
+      `http://10.58.1.224:8000/products?PageNo=${PageNo}&Show=8&ordering=${ordering}`
+    )
       .then(res => res.json())
-      .then(data =>
+      .then(data => {
         this.setState({
           PageNoMax: data.max_page,
           shoesData: data.product_list,
-        })
-      );
+        });
+      });
   };
 
   clickLeft = () => {
@@ -73,31 +61,22 @@ class ShoesList extends Component {
       nextPageNum--;
       this.setState({ PageNo: nextPageNum });
     }
-    this.props.history.push(
-      `/shoes?PageNo=${Number(nextPageNum)}&Show=${SHOW}`
-    );
+    this.props.history.push(`/shoes?PageNo=${Number(nextPageNum)}&Show=8`);
   };
 
   clickRight = () => {
     const { PageNo, PageNoMax } = this.state;
     let nextPageNum = PageNo + 1;
 
-    if (nextPageNum < 1) {
-    } else {
-      if (nextPageNum < PageNoMax) {
-        console.log(this.state.PageNoMax);
-        console.log(nextPageNum);
-        this.setState({ PageNo: nextPageNum });
-      }
+    if (nextPageNum >= 1 && nextPageNum <= PageNoMax) {
+      this.setState({ PageNo: nextPageNum });
+      this.props.history.push(`/shoes?PageNo=${Number(nextPageNum)}&Show=8`);
     }
-    this.props.history.push(
-      `/shoes?PageNo=${Number(nextPageNum)}&Show=${SHOW}`
-    );
   };
 
   fetchShoes = number => {
     this.setState({ PageNo: number });
-    this.props.history.push(`/shoes?PageNo=${number}&Show=${SHOW}`);
+    this.props.history.push(`/shoes?PageNo=${number}&Show=8`);
   };
 
   handleClickOpen = () => {
@@ -106,19 +85,19 @@ class ShoesList extends Component {
     });
   };
 
-  // isButtonClick = index => {
-  //   const buttonList = [...Array(this.state.ButtonClick.length)].fill(false);
-  //   buttonList[index] = true;
-  //   this.setState({
-  //     ButtonClick: buttonList,
-  //   });
-  // };
+  clickSort = el => {
+    const { PageNo } = this.state;
+    this.setState({
+      ordering: el,
+    });
+    this.props.history.push(
+      `/shoes?PageNo=${Number(PageNo)}&Show=8&ordering=${el}`
+    );
+  };
 
   render() {
     const { shoesData } = this.state;
-
     const PageNoNum = [...Array(Number(this.state.PageNoMax)).keys()];
-
     const { clickLeft, clickRight } = this;
 
     return (
@@ -127,21 +106,11 @@ class ShoesList extends Component {
           <section className="filter">
             <div className="firstFilter">
               <ul>
-                <li>
-                  <Link to="/">추천순</Link>
-                </li>
-                <li>
-                  <Link to="/">신상품순</Link>
-                </li>
-                <li>
-                  <Link to="/">판매순</Link>
-                </li>
-                <li>
-                  <Link to="/">높은가격순</Link>
-                </li>
-                <li>
-                  <Link to="/">낮은가격순</Link>
-                </li>
+                <li onClick={() => this.clickSort('-release_at')}>추천순</li>
+                <li onClick={() => this.clickSort('-price')}>신상품순</li>
+                <li onClick={() => this.clickSort('-price')}>판매순</li>
+                <li onClick={() => this.clickSort('-price')}>높은가격순</li>
+                <li onClick={() => this.clickSort('-price')}>낮은가격순</li>
               </ul>
             </div>
 
@@ -163,6 +132,7 @@ class ShoesList extends Component {
             <ul className="shoesCardListUl">
               {shoesData.map(shoes => {
                 return (
+                  //목데이터부분
                   // <ShoesCard
                   //   key={shoes.id}
                   //   shoes_img={shoes.shoes_img}
@@ -193,7 +163,6 @@ class ShoesList extends Component {
                   key={index}
                   num={num + 1}
                   fetchShoes={this.fetchShoes}
-                  // isButtonClick={this.isButtonClick}
                 />
               ))}
               <li className="nextArrow">
