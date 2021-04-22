@@ -76,11 +76,16 @@ class ShoesList extends Component {
   };
 
   clickRight = () => {
-    const { PageNo } = this.state;
+    const { PageNo, PageNoMax } = this.state;
     let nextPageNum = PageNo + 1;
 
-    if (nextPageNum > 1) {
-      this.setState({ PageNo: nextPageNum });
+    if (nextPageNum < 1) {
+    } else {
+      if (nextPageNum < PageNoMax) {
+        console.log(this.state.PageNoMax);
+        console.log(nextPageNum);
+        this.setState({ PageNo: nextPageNum });
+      }
     }
     this.props.history.push(
       `/shoes?PageNo=${Number(nextPageNum)}&Show=${SHOW}`
@@ -97,8 +102,6 @@ class ShoesList extends Component {
       open: !this.state.open,
     });
   };
-
-
 
   render() {
     const { shoesData } = this.state;
@@ -133,15 +136,9 @@ class ShoesList extends Component {
 
             <div className="lastFilter">
               <select name="" id="" className="filterSelect">
-                <option value="20개씩 보기" >
-                  10개씩 보기
-                </option>
-                <option value="40개씩 보기">
-                  20개씩 보기
-                </option>
-                <option value="80개씩 보기">
-                  40개씩 보기
-                </option>
+                <option value="20개씩 보기">10개씩 보기</option>
+                <option value="40개씩 보기">20개씩 보기</option>
+                <option value="80개씩 보기">40개씩 보기</option>
               </select>
               <button className="filterButton" onClick={this.handleClickOpen}>
                 FILTE
