@@ -1,0 +1,69 @@
+@import '../../../styles/Common.scss';
+
+.loginForm {
+  width: 400px;
+
+  .chkMemberBox {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+
+    .loginMember,
+    .loginGuest {
+      @extend %flex-jutify-center;
+      padding: 20px;
+      width: 200px;
+      border-bottom: 1px solid black;
+      font-size: 18px;
+    }
+  }
+
+  .inputId,
+  .inputPw {
+    margin: 5px 0;
+    height: 40px;
+    border: 1px solid #ddd;
+  }
+
+  .saveId {
+    margin: 15px 5px 15px;
+  }
+
+  .loginBtnBox {
+    display: flex;
+    flex-direction: column;
+
+    .loginBtn,
+    .loginNBtn {
+      margin: 5px 0;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .loginBtn {
+      background-color: black;
+      color: white;
+    }
+
+    .loginNBtn {
+      border: 1px solid #ddd;
+      background-color: white;
+      color: #666;
+    }
+  }
+
+  .loginLinkBox {
+    @extend %flex-jutify-center;
+    margin-top: 10px;
+    font-size: 12px;
+
+    * {
+      padding: 0 15px;
+    }
+
+    .findPw {
+      border-right: 1px solid #333;
+      border-left: 1px solid #333;
+    }
+  }
+}
