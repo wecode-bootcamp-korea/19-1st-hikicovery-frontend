@@ -1,0 +1,21 @@
+@import '../../../styles/Common.scss';
+
+.BestItem {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 60px 0 120px 0;
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: $robotFont;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .shoesCardBox {
+    overflow: hidden;
+    .shoesCardUl {
+      display: flex;
+    }
+  }
+}

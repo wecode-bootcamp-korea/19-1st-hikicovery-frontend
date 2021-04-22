@@ -1,0 +1,45 @@
+@import '../../../styles/Common.scss';
+
+.shoesCardLi {
+  width: 295px;
+  border: 0.5px solid #ddd;
+
+  &:hover {
+    border: 0.5px solid #000;
+    z-index: 100;
+  }
+
+  .defaultImg {
+    width: 295px;
+    height: 310px;
+  }
+
+  .hoverImg {
+    width: 295px;
+    height: 310px;
+  }
+
+  .bestItemInfo {
+    position: absolute;
+    width: 295px;
+    padding-top: 10px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 0.5px solid #000;
+
+    .txtSize {
+      display: flex;
+      flex-flow: row wrap;
+      width: 80%;
+      margin: 20px auto 0 auto;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+
+      .txt {
+        width: 20%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
