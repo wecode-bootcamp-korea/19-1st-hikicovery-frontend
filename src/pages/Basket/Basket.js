@@ -29,7 +29,7 @@ class Basket extends Component {
   delProduct = id => {
     const { basketData } = this.state;
     const filterData = basketData.filter(product => {
-      return product.id !== id;
+      return product.product_detail !== id;
     });
     this.setState({
       ...basketData,
@@ -90,7 +90,7 @@ class Basket extends Component {
                         size,
                         price,
                         quantity,
-                        id,
+                        product_detail,
                         name,
                       } = product;
                       return (
@@ -147,7 +147,7 @@ class Basket extends Component {
                           <div className="delete">
                             <button
                               className="delProductBtn"
-                              onClick={() => delProduct(id)}
+                              onClick={() => delProduct(product_detail)}
                             >
                               <FaTimes />
                             </button>
