@@ -33,6 +33,7 @@ class Login extends Component {
       .then(res => res.json())
       .then(data => {
         if (data.message === 'SUCCESS') {
+          localStorage.setItem('token', data.token);
           this.props.history.push('/');
         }
       });

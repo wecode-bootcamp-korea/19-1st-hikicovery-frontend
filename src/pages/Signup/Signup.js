@@ -63,10 +63,15 @@ class Signup extends Component {
         birthday: date,
         phone_number: phoneNum,
         email: emailMix,
+        address: '광주광역시',
       }),
     })
       .then(res => res.json())
-      .then(res => {});
+      .then(res => {
+        if (res.message === 'SUCCESS') {
+          this.props.history.push('/login');
+        }
+      });
   };
 
   render() {

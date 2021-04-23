@@ -157,7 +157,6 @@ class MainContent extends Component {
               <ul className="contentItemBox">
                 <h2 className="contentItemHeader">STYLE PICK</h2>
                 {mainData.map(element => {
-                  console.log(mainData);
                   return (
                     <ContentItem
                       key={element.id}

@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
+import { API_URL } from '../../../../config';
+import { withRouter } from 'react-router-dom';
 import './PaymentButton.scss';
 
 class PaymentButton extends Component {
   goToBasket = () => {
-    this.props.history.push('/basket');
+    fetch(`${API_URL}cart`, {
+      method: 'POST',
+      body: JSON.stringify({
+        product: 1,
+        size: 1,
+        quantity: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.MESSAGE === 'SUCCESS') {
+          this.props.history.push('/basket');
+        }
+      });
   };
 
   render() {
@@ -16,4 +31,4 @@ class PaymentButton extends Component {
   }
 }
 
-export default PaymentButton;
+export default withRouter(PaymentButton);
