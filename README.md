@@ -4,8 +4,6 @@
 > 리액트로 제작된 홈페이지가 아니였고 직접 저희 팀원들이 리액트 홈페이지에 맞게
 > 설계하여 클론코딩으로 진행하게되었습니다.
 
-<img src="https://media.vlpt.us/images/_dodo_hee/post/d57baafa-c8b1-4e0b-886f-2a4c71c082b3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-04-25%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%201.50.20.png"  width="700" height="370">
-
 ## 💻 프로젝트 내용
 
 - React를 사용한 Discovery Expedition clone
