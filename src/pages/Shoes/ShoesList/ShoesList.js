@@ -29,7 +29,7 @@ class ShoesList extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.location.search !== this.props.location.search) {
-      fetch(`${API_URL}products${this.props.location.search}`)
+      fetch(`${API_URL}/products${this.props.location.search}`)
         .then(res => res.json())
         .then(data => {
           this.setState({
@@ -42,7 +42,7 @@ class ShoesList extends Component {
 
   getProductData = () => {
     const { PageNo, ordering } = this.state;
-    fetch(`${API_URL}products?PageNo=${PageNo}&Show=8&ordering=${ordering}`)
+    fetch(`${API_URL}/products?PageNo=${PageNo}&Show=8&ordering=${ordering}`)
       .then(res => res.json())
       .then(data => {
         this.setState({

@@ -18,7 +18,7 @@ class MainContent extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}products?ordering=-release_at&Show=1`)
+    fetch(`${API_URL}/products?ordering=-release_at&Show=1`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -27,7 +27,7 @@ class MainContent extends Component {
       });
 
     fetch(
-      `${API_URL}products?category=1&ordering=-productsale__product_sales&Show=1`
+      `${API_URL}/products?category=1&ordering=-productsale__product_sales&Show=1`
     )
       .then(res => res.json())
       .then(res => {

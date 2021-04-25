@@ -5,7 +5,7 @@ import './PaymentButton.scss';
 
 class PaymentButton extends Component {
   goToBasket = () => {
-    fetch(`${API_URL}cart`, {
+    fetch(`${API_URL}/cart`, {
       method: 'POST',
       body: JSON.stringify({
         product: 1,

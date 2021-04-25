@@ -12,7 +12,7 @@ class ShoesBestItem extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}products/best-items`, {
+    fetch(`${API_URL}/products/best-items`, {
       method: 'GET',
     })
       .then(res => res.json())
