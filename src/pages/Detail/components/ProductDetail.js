@@ -25,7 +25,7 @@ class ProductDetail extends Component {
 
   componentDidMount = idx => {
     const { id } = this.props.match.params;
-    fetch(`${API_URL}products/${id}`)
+    fetch(`${API_URL}/products/${id}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -54,7 +54,7 @@ class ProductDetail extends Component {
   handleClickColorList = idx => {
     const newArr = Array(this.state.color).fill(false);
     newArr[idx] = true;
-    fetch(`${API_URL}products/${idx}`)
+    fetch(`${API_URL}/products/${idx}`)
       .then(res => res.json())
       .then(res => {
         this.setState({

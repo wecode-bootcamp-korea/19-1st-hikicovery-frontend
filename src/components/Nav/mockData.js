@@ -1,4 +1,4 @@
-const CATEGORY_LIST = [
+export const CATEGORY_LIST = [
   {
     category: 'MEN',
     subCategoryList: [
@@ -80,5 +80,3 @@ const CATEGORY_LIST = [
     ],
   },
 ];
-
-export default CATEGORY_LIST;
